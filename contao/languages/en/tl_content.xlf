@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xliff version="1.1">
+<file>
+<body>
+    <!-- LEGENDS -->
+    <trans-unit id="tl_content.cc_tag_visibility_legend">
+        <target>Cookie Consent: Opt-In/ EU-Privacy</target>
+    </trans-unit>
+    <!-- FIELDS -->
+    <trans-unit id="tl_content.cc_tag_visibility.0">
+        <target>Nur mit expliziter Zustimmung anzeigen</target>
+    </trans-unit>
+    <trans-unit id="tl_content.cc_tag_visibility.1">
+        <target>Das Frontend-Modul nur anzeigen wenn der Nutzer explizit seine Zustimmung für das entsprechende "Inhaltselement / Frontend-Modul"-Tag gegeben hat.</target>
+    </trans-unit>
+    <trans-unit id="tl_content.cc_tag.0">
+        <target>Inhaltselement / Frontend-Modul-Tag</target>
+    </trans-unit>
+    <trans-unit id="tl_content.cc_tag.1">
+        <target>Wählen Sie aus welchem Tag zugestimmt werden muss um das Frontend-Modul anzuzeigen.</target>
+    </trans-unit>
+</body>
+</file>
+</xliff>

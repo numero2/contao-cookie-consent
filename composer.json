@@ -1,0 +1,59 @@
+{
+    "name": "numero2/contao-cookie-consent",
+    "type": "contao-bundle",
+    "description": "A cookie consent solution for Contao CMS - the drop-in replacement for the cookie consent functionality of Contao Marketing Suite.",
+    "keywords": ["contao", "dsgvo", "gdpr", "cookie", "cookiebar", "cookieconsent", "consent", "opt-in"],
+    "license": "LGPL-3.0+",
+    "authors": [{
+            "name": "numero2 - Agentur für digitales Marketing GbR",
+            "homepage": "https://www.numero2.de"
+        }
+    ],
+    "require": {
+        "contao/core-bundle": "^5.7",
+        "jeremykendall/php-domain-parser": "^6.4",
+        "doctrine/dbal": "^4.3",
+        "symfony/config": "^7.4",
+        "symfony/dependency-injection": "^7.4",
+        "symfony/event-dispatcher": "^7.4",
+        "symfony/http-foundation": "^7.4",
+        "symfony/http-kernel": "^7.4",
+        "symfony/translation-contracts": "^3.0",
+        "twig/twig": "^3.21"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.0",
+        "shipmonk/composer-dependency-analyser": "^1.4"
+    },
+    "conflict": {
+        "contao/core": "*",
+        "contao/manager-plugin": "<2.0 || >=3.0"
+    },
+    "extra": {
+        "contao-manager-plugin": "numero2\\CookieConsentBundle\\ContaoManager\\Plugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "numero2\\CookieConsentBundle\\": "src/"
+        },
+        "classmap": [
+            "contao/"
+        ],
+        "exclude-from-classmap": [
+            "contao/config/",
+            "contao/dca/",
+            "contao/languages/",
+            "contao/templates/"
+        ]
+    },
+    "scripts": {
+        "depcheck": "@php vendor/bin/composer-dependency-analyser --config=depcheck.php"
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": false,
+            "php-http/discovery": false,
+            "contao/manager-plugin": false
+        }
+    }
+}

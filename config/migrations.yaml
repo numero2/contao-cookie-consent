@@ -1,0 +1,12 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+
+    numero2\CookieConsentBundle\Migration\CmsTagMigration:
+        arguments:
+            - '@database_connection'
+
+    numero2\CookieConsentBundle\Migration\CmsContentModuleFieldsMigration:
+        arguments:
+            - '@database_connection'

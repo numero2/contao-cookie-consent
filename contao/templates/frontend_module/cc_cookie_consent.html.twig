@@ -1,0 +1,380 @@
+{% extends '@Contao/content_element/_base.html.twig' %}
+{% use "@Contao/component/_cc_svg_spinner.html.twig" %}
+{% trans_default_domain 'contao_default' %}
+
+{% set searchable = false %}
+
+{% block wrapper_tag %}cc-cookie-consent{% endblock %}
+
+{% block inner %}{% endblock %}
+
+
+{# Disclaimer text #}
+{% block shadow_disclaimer %}
+<div class="disclaimer" part="disclaimer" id="cc-desc">
+
+    {% block shadow_disclaimer_text %}
+        {% if cc_override_labels and cc_text|length %}
+            {{ cc_text|insert_tag_raw|raw }}
+        {% else %}
+            {{ 'MSC.cookie_consent.default.text'|trans|insert_tag_raw|raw }}
+        {% endif %}
+    {% endblock %}
+
+</div>
+{% endblock %}
+
+
+{# List of tag categories #}
+{% block shadow_categories %}
+
+    {% set alwaysActiveLabel = ('MSC.cookie_consent.always_active'|trans) %}
+    {% set visibleGroups = tagGroups|default([])|filter(g => g.show) %}
+
+    {% if visibleGroups|length %}
+    <fieldset class="categories" part="categories" aria-label="{{ 'MSC.cookie_consent.aria.categories'|trans }}">
+        {% for group in visibleGroups %}
+            {% block shadow_category %}
+            <div class="category" part="category">
+
+                {% block shadow_cat_header %}
+                <div class="header" part="category-header">
+
+                    {% block shadow_cat_title %}
+                    <span class="title" id="lbl-{{ group.id }}">{{ group.name }}</span>
+                    {% endblock %}
+
+                    {% block shadow_cat_toggle %}
+                        {% if not group.required %}
+                            <span class="badge" aria-label="{{ group.name }} – {{ alwaysActiveLabel }}" title="{{ alwaysActiveLabel }}">{{ alwaysActiveLabel }}</span>
+                            <input type="hidden" name="cookie_{{ group.id }}" value="{{ group.id }}">
+                        {% else %}
+                            <label class="toggle" for="cookie_{{ group.id }}" aria-label="{{ group.name }}">
+                                <input id="cookie_{{ group.id }}" type="checkbox" name="cookie_{{ group.id }}" value="{{ group.id }}" role="switch" aria-checked="{{ group.accepted ? 'true' : 'false' }}" {% if group.accepted %} checked{% endif %}>
+                                <span class="track" aria-hidden="true">
+                                    <span class="thumb"></span>
+                                </span>
+                            </label>
+                        {% endif %}
+                    {% endblock %}
+
+                </div>
+                {% endblock %}
+
+                {% if group.description|default('')|length %}
+                    {% block shadow_cat_body %}
+                    <div class="body" part="category-body">
+                        {{ group.description|insert_tag_raw|raw }}
+                    </div>
+                    {% endblock %}
+                {% endif %}
+
+            </div>
+            {% endblock %}
+        {% endfor %}
+    </fieldset>
+    {% endif %}
+
+{% endblock %}
+
+
+{# "Accept" and "Accept all" buttons #}
+{% block shadow_actions %}
+<div class="actions" part="actions" role="group" aria-label="{{ 'MSC.cookie_consent.aria.choices'|trans }}">
+
+    {% set acceptLabel = cc_accept_label|insert_tag %}
+    {% if not cc_override_labels or not cc_accept_label|length %}
+        {% set acceptLabel = 'MSC.cookie_consent.default.accept_label'|trans|insert_tag %}
+    {% endif %}
+
+    {% block shadow_btn_accept %}
+    <button class="btn confirm" part="btn btn-confirm" type="submit" name="choice" value="accept" aria-label="{{ acceptLabel }}">
+        {{ acceptLabel }} {{ block('cc_svg_spinner_component') }}
+    </button>
+    {% endblock %}
+
+    {% if cc_accept_all_label|default('')|length %}
+        {% set acceptLabelAll = cc_accept_all_label|insert_tag %}
+        {% block shadow_btn_accept_all %}
+        <button class="btn all" part="btn btn-all" type="submit" name="choice" value="accept_all" aria-label="{{ acceptLabelAll }}">
+            {{ acceptLabelAll }} {{ block('cc_svg_spinner_component') }}
+        </button>
+        {% endblock %}
+    {% endif %}
+
+</div>
+{% endblock %}
+
+
+{# Copyright #}
+{% block shadow_copyright %}
+    {% if not hideCopyright %}
+    <div class="copyright" role="presentation" aria-hidden="true">
+        {{('MSC.cookie_consent.copyright'|trans)|raw }}
+    </div>
+    {% endif %}
+{% endblock %}
+
+
+{# Styling #}
+{% block shadow_styles %}
+    {% include '@Contao/styles/cc_cookie_consent.html.twig' %}
+{% endblock %}
+
+
+{% block script %}
+    {% add 'cc_cookie_consent_js' to body %}
+
+        {% set script_attributes = attrs()
+            .setIfExists('nonce', csp_nonce('script-src'))
+            .mergeWith(script_attributes|default)
+        %}
+        <script{{ script_attributes }}>
+
+            {#
+                Custom element: <cc-cookie-consent>
+
+                This component dispatches the following custom events.
+                All events bubble and are composed (i.e. they cross the shadow DOM boundary
+                and can be listened to on any ancestor element, including document).
+
+                -------------------------------------------------------------------------
+                cc:submit       Cancelable. Fired before the form data is sent to the
+                                server. Call preventDefault() to abort the submission.
+
+                cc:accept       Fired when the user saves a custom cookie selection.
+
+                cc:accept-all   Fired when the user clicks "Accept all".
+                -------------------------------------------------------------------------
+
+                All three events carry the same detail object:
+                {
+                    choice:  string         // 'accept' | 'accept_all'
+                    cookies: string[]       // values of all checked checkboxes
+                    form:    HTMLFormElement
+                }
+
+                Usage example:
+                document.addEventListener('cc:accept-all', (e) => {
+                    console.log('User accepted all cookies', e.detail.cookies);
+                });
+
+                document.addEventListener('cc:submit', (e) => {
+                    e.preventDefault(); // prevents the form from being submitted
+                });
+            #}
+            (()=>{
+                'use strict';
+
+                if( customElements.get('cc-cookie-consent') ) {
+                    return;
+                }
+
+                {% block script_handling %}
+
+                class CcCookieConsent extends HTMLElement {
+
+                    static get observedAttributes() {
+                        return ['open'];
+                    }
+
+                    constructor() {
+                        super();
+                        this.attachShadow({ mode: 'open' });
+                    }
+
+                    connectedCallback() {
+
+                        this._render();
+                        this._openDialog();
+                        this._bindEvents();
+                    }
+
+                    open() {
+                        this._openDialog();
+                    }
+
+                    close() {
+                        this._closeDialog();
+                    }
+
+                    _render() {
+
+                        this.shadowRoot.innerHTML = {{ block('shadow_styles')|json_encode|raw }};
+
+                        const dialog = document.createElement('dialog');
+                        dialog.setAttribute('part', 'dialog');
+                        dialog.setAttribute('aria-modal', 'true');
+                        dialog.setAttribute('aria-describedby', 'cc-desc');
+
+                        dialog.innerHTML =
+                            '<div class="backdrop" part="backdrop"></div>' +
+                            '<div class="panel" part="panel" role="document">' +
+                                '<form action="{{ action|e('js') }}" method="post" novalidate>' +
+                                    '<input type="hidden" name="FORM_SUBMIT"   value="{{ formSubmit|e('js') }}">' +
+                                    '<input type="hidden" name="REQUEST_TOKEN" value="{{ contao.request_token|e('js') }}">' +
+                                    {{ block('shadow_disclaimer')|json_encode|raw }} +
+                                    {{ block('shadow_categories')|json_encode|raw }} +
+                                    {{ block('shadow_actions')|json_encode|raw }} +
+                                    {{ block('shadow_copyright')|json_encode|raw }} +
+                                    '<div class="sr-only" role="status" aria-live="polite" aria-atomic="true" id="cc-status"></div>' +
+                                '</form>' +
+                            '</div>';
+
+                        this.shadowRoot.appendChild(dialog);
+                    }
+
+                    _bindEvents() {
+
+                        const form = this.shadowRoot.querySelector('form');
+
+                        if( !form ) {
+                            return;
+                        }
+
+                        form.addEventListener('submit', (e)=>{
+                            e.preventDefault();
+                            this._handleSubmit(e);
+                        });
+
+                        form.querySelectorAll('input[type="checkbox"][role="switch"]').forEach((cb)=>{
+                            cb.addEventListener('change', ()=>
+                                cb.setAttribute('aria-checked', String(cb.checked))
+                            );
+                        });
+
+                        form.querySelector('.btn.all')?.addEventListener('click', ()=>{
+                            form.querySelectorAll('input[type="checkbox"][role="switch"]').forEach(cb => {
+                                cb.checked = true;
+                                cb.setAttribute('aria-checked', 'true');
+                            });
+                        });
+
+                        const dialog = this.shadowRoot.querySelector('dialog');
+
+                        dialog?.addEventListener('cancel', e=> e.preventDefault());
+
+                        dialog?.addEventListener('keydown', e=>{
+                            if( e.key === 'Escape' ) {
+                                e.preventDefault();
+                            }
+                        });
+                    }
+
+                    _openDialog() {
+
+                        const dialog = this.shadowRoot.querySelector('dialog');
+
+                        if( !dialog ) {
+                            return;
+                        }
+
+                        document.body
+                            .querySelectorAll(':scope > *:not(cc-cookie-consent)')
+                            .forEach(el => { el.inert = true; });
+
+                        typeof dialog.showModal === 'function'
+                            ? dialog.showModal()
+                            : dialog.setAttribute('open', '');
+
+                        requestAnimationFrame(() => {
+                            dialog.showModal();
+                            dialog.querySelector('button:not([disabled])')?.focus();
+                        });
+                    }
+
+                    _closeDialog() {
+
+                        const dialog = this.shadowRoot.querySelector('dialog');
+
+                        if( !dialog ) {
+                            return;
+                        }
+
+                        this.removeAttribute('open');
+                    }
+
+                    async _handleSubmit(e) {
+
+                        const form = e.target;
+                        const choice = e.submitter?.value ?? 'accept';
+                        const cookies = [...form.querySelectorAll('input[type="checkbox"]:checked')].map(cb => cb.value);
+                        const detail = { choice, cookies, form };
+
+                        const pre = new CustomEvent('cc:submit', {
+                            bubbles: true, composed: true, cancelable: true, detail,
+                        });
+
+                        form.classList.add('loading');
+
+                        if( e.submitter.tagName === 'BUTTON' ) {
+                            e.submitter.classList.add('loading');
+                        }
+
+                        form.querySelectorAll('.actions button').forEach(button=>{
+                            button.setAttribute('disabled',true);
+                        });
+
+                        if( !this.dispatchEvent(pre) ) {
+                            return;
+                        }
+
+                        this.dispatchEvent(new CustomEvent(
+                            choice === 'accept_all' ? 'cc:accept-all' : 'cc:accept',
+                            { bubbles: true, composed: true, detail }
+                        ));
+
+                        const status = this.shadowRoot.getElementById('cc-status');
+
+                        if( status ) {
+                            status.textContent = '{{ 'MSC.cookie_consent.status.saving'|trans }}';
+                        }
+
+                        try {
+
+                            const data = new FormData(form);
+                            data.set('choice', choice);
+
+                            const res = await fetch(form.action, {
+                                method: 'POST',
+                                body: data,
+                                headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                                credentials: 'same-origin',
+                                redirect: 'manual',
+                            });
+
+                            form.classList.remove('loading');
+
+                            if( res.type === 'opaqueredirect' ) {
+                                window.location.href = res.headers.get('X-Redirect-Url') ?? form.action;
+                            } else if( res.ok ) {
+                                this._closeDialog();
+                            } else {
+                                throw new Error('HTTP ' + res.status);
+                            }
+
+                        } catch( err ) {
+
+                            console.error('[cc-cookie-consent]', err);
+
+                            if( status ) {
+                                status.textContent = '{{ 'MSC.cookie_consent.status.error'|trans }}';
+                            }
+
+                            form.querySelectorAll('.actions button').forEach(button=>{
+                                button.classList.remove('loading');
+                                button.removeAttribute('disabled');
+                            });
+                        }
+                    }
+                }
+
+                customElements.define('cc-cookie-consent', CcCookieConsent);
+
+                {% endblock %}
+
+            })();
+        </script>
+
+    {% endadd %}
+{% endblock %}

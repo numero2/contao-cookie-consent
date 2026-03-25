@@ -1,0 +1,47 @@
+<style>
+
+:host {
+	--cc-bg: #ffffff;
+	--cc-surface: #f8f7f4;
+	--cc-border: #e2ddd8;
+	--cc-text: #1a1916;
+	--cc-text-muted: #6b6760;
+	--cc-accent: #2d5a3d;
+    --cc-accent-text: #ffffff;
+	--cc-accent-light: color-mix(in srgb, var(--cc-accent) 20%, white);
+	--cc-accent-hover: color-mix(in srgb, var(--cc-accent) 85%, black);
+	--cc-btn-ghost-border: #c8c3be;
+	--cc-toggle-on: var(--cc-accent);
+    --cc-toggle-off: #d4cfc9;
+    --cc-toggle-thumb: #ffffff;
+	--cc-shadow: 0 8px 40px rgba(0, 0, 0, .18), 0 2px 8px rgba(0, 0, 0, .08);
+	--cc-radius: 12px;
+	--cc-radius-sm: 6px;
+	--cc-font: system-ui, -apple-system, sans-serif;
+	--cc-font-heading: var(--cc-font);
+	--cc-speed: .2s;
+
+    display: contents;
+}
+
+@media( prefers-color-scheme: dark ) {
+
+    :host(:not([color-scheme="light"])) {
+
+        --cc-bg: #222831;
+        --cc-surface: #31363f;
+        --cc-border: #444c58;
+        --cc-text: #eeeeee;
+        --cc-text-muted: #9a9fa8;
+        --cc-accent-light: color-mix(in srgb, var(--cc-accent) 25%, #31363f);
+        --cc-btn-ghost-border: #555d6b;
+        --cc-toggle-off: #444c58;
+        --cc-toggle-thumb: #eeeeee;
+        --cc-shadow: 0 8px 40px rgba(0, 0, 0, .4), 0 2px 8px rgba(0, 0, 0, .2);
+    }
+}
+
+{% block styles %}
+{% endblock %}
+
+</style>

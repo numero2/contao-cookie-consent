@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+
+    numero2\CookieConsentBundle\Controller\FrontendModule\CookieConsentController:
+        arguments:
+            - '@numero2_cookie_consent.util.cookie_consent'

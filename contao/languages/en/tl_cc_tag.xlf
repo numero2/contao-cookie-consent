@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<xliff version="1.1">
+<file>
+<body>
+    <!-- LEGENDS -->
+    <trans-unit id="tl_cc_tag.common_legend">
+        <target>Allgemein</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.description_legend">
+        <target>Gruppen Beschreibung</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.tag_legend">
+        <target>Tag Einstellungen</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.config_legend">
+        <target>Tag-Konfiguration</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.expert_legend">
+        <target>Experten-Einstellungen</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.publish_legend">
+        <target>Veröffentlichung</target>
+    </trans-unit>
+    <!-- FIELDS -->
+    <trans-unit id="tl_cc_tag.type.0">
+        <target>Tag-Typ</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.type.1">
+        <target>Bitte wählen Sie den Type des Tags.</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.name.0">
+        <target>Name</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.name.1">
+        <target>Bitte geben sie diesem Tag einen Namen.</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.root.0">
+        <target>Festlegen für...</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.root.1">
+        <target>Legt fest ob der Name und die Beschreibung für alle Seitenroots gilt oder nur für eine bestimmte Seite.</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.description.0">
+        <target>Beschreibung</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.description.1">
+        <target>Diese Beschreibung wird dem Nutzer als Erklärung angezeigt.</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.html.0">
+        <target>HTML Code</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.section.0">
+        <target>Ausspielen in</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.section.1">
+        <target>Bitte auswählen in welchem Bereich der Tag ausgespielt werden soll.</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.fallbackTpl.0">
+        <target>Fallback Template</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.fallbackTpl.1">
+        <target>Hier können Sie ein "Fallback-Template" angeben welches dem Nutzer angezeigt wird wenn der Tag nicht bestätigt wurde.</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.fallback_text.0">
+        <target>Fallback Text</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.fallback_text.1">
+        <target>Hier können Sie ein Fallback-Text angeben welcher dem Nutzer angezeigt wird wenn der Tag nicht bestätigt wurde. Weitere Informationen zur Einrichtung <![CDATA[<a href="https://contao-marketingsuite.com/a6zb17" target="_blank">finden Sie hier</a>]]>.</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.customTpl.0">
+        <target>Individuelles Template</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.customTpl.1">
+        <target>Hier können Sie das Standard-Template überschreiben.</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.pages_scope.0">
+        <target>Seiten-Anwendungsbereich</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.pages_scope.1">
+        <target>Anwendungsbereich der ausgewählten Seiten</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.pages.0">
+        <target>Seiten</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.pages.1">
+        <target>Bitte wähle auf welchen Seiten der Seiten-Anwendungsbereich angewendet werden soll.</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.pages_root.0">
+        <target>Seiten</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.pages_root.1">
+        <target>Bitte wähle auf welchen Seitenroots dieses Element als zustimmungspflichtig angezeigt werden soll. Falls nichts ausgewählt ist wird davon ausgegangen das dieses Element auf mehreren Seitenroots verwendet wird.</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.active.0">
+        <target>Aktiv?</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.active.1">
+        <target>Diesen Tag aktivieren?</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.enable_on_cookie_accept.0">
+        <target>Opt-In / EU-Privacy konform</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.enable_on_cookie_accept.1">
+        <target>Wenn aktiviert, wird dieser Tag nur ausgespielt wenn Cookies akzeptiert wurden, ansonsten immer.</target>
+    </trans-unit>
+    <!-- OPTIONS -->
+    <trans-unit id="tl_cc_tag.types.default">
+        <target>-</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.types.group">
+        <target>Gruppe</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.types.session">
+        <target>Session-Cookie</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.types.html">
+        <target>HTML</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.types.google_analytics">
+        <target>Google Analytics</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.types.google_tag_manager">
+        <target>Google Tag Manager</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.types.facebook_pixel">
+        <target>Facebook Pixel</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.types.matomo">
+        <target>Matomo</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.types.content_module_element">
+        <target>Inhaltselement / Frontend-Modul</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.sections.head">
+        <target>Kopfbereich (head)</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.sections.body">
+        <target>Inhalt (body)</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.page_scopes.none">
+        <target>Keine automatische Ausspielung</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.page_scopes.current_page">
+        <target>Nur ausgewählte Seiten</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.page_scopes.current_and_direct_children">
+        <target>Ausgewählte Seiten und direkte Unterseiten</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.page_scopes.current_and_all_children">
+        <target>Ausgewählte Seiten und alle Unterseiten</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.roots.default">
+        <target>alle Seiten</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.roots.default_initial">
+        <target>alle Seiten (speichern um weitere Seitenroots auswählen zu können)</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.roots.specific">
+        <target>nur für die Seite „%s”</target>
+    </trans-unit>
+    <!-- DEFAULTS -->
+    <trans-unit id="tl_cc_tag.default.0.name">
+        <target>Notwendig</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.default.0.description">
+        <target><![CDATA[<p>]]>Tools, die wesentliche Services und Funktionen ermöglichen, einschließlich Identitätsprüfung, Servicekontinuität und Standortsicherheit. Diese Option kann nicht abgelehnt werden.<![CDATA[</p>]]></target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.default.1.name">
+        <target>Statistik</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.default.1.description">
+        <target><![CDATA[<p>]]>Wir sammeln anonyme Daten über Nutzung und -Funktionalität unserer Seite. Wir nutzen diese Erkenntnisse, um unsere Produkte, Dienstleistungen und das Benutzererlebnis zu verbessern.<![CDATA[</p>]]></target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.default.2.name">
+        <target>Werbung</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.default.2.description">
+        <target><![CDATA[<p>]]>Anonyme Informationen, die wir sammeln, um Ihnen nützliche Produkte und Dienstleistungen empfehlen zu können.<![CDATA[</p>]]></target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.default.3.name">
+        <target>Drittanbieter-Inhalte</target>
+    </trans-unit>
+    <trans-unit id="tl_cc_tag.default.3.description">
+        <target><![CDATA[<p>]]>Inhalte von Dritten wie z.B. Videos von YouTube oder Karten von Google Maps.<![CDATA[</p>]]></target>
+    </trans-unit>
+</body>
+</file>
+</xliff>

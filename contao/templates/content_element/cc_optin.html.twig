@@ -1,0 +1,103 @@
+{% extends '@Contao/content_element/_base.html.twig' %}
+{#% extends '@Contao/frontend_module/_base.html.twig' %#}
+
+{% trans_default_domain 'contao_default' %}
+
+{% set searchable = false %}
+
+{# By default the color scheme of the consent dialog is defined by the users system settings.
+To force a specific color scheme set "color-scheme" to "light" or "dark". #}
+{% block inner %}
+
+    {% if app.debug %}
+    <!-- cc-optin tag {{ cc_tag }}-->
+    {% endif %}
+
+    <cc-cookie-optin>
+
+        <template shadowrootmode="open">
+
+            {{ block('shadow_styles') }}
+
+            <dialog open part="dialog">
+                {{ block('shadow_content') }}
+            </dialog>
+
+        </template>
+
+    </cc-cookie-optin>
+{% endblock %}
+
+
+{# Disclaimer text #}
+{% block shadow_content %}
+
+    {% if fallback_text|default('')|length %}
+        {{ fallback_text|insert_tag_raw|raw }}
+    {% else %}
+        {{ ('MSC.cookie_consent.optin_fallback.info'|trans)|raw }}
+    {% endif %}
+
+    {% set shadow_button_attributes = attrs()
+        .addClass('btn')
+        .set('href', cc_consent_force_link(element_html_id|default('')))
+        .set('role', 'button')
+        .set('aria-label', 'MSC.cookie_consent.optin_fallback.button_label'|trans)
+        .mergeWith(shadow_button_attributes|default)
+    %}
+
+    {% block shadow_button %}
+        <a{{ shadow_button_attributes|default }}>
+            <span>{{ 'MSC.cookie_consent.optin_fallback.button_label'|trans }}</span>
+        </a>
+    {% endblock %}
+
+{% endblock %}
+
+
+{# Styling #}
+{% block shadow_styles %}
+    {% include '@Contao/styles/cc_cookie_optin.html.twig' %}
+{% endblock %}
+
+
+{% block script %}
+    {% add 'cc_cookie_optin_js' to body %}
+
+        {% set script_attributes = attrs()
+            .setIfExists('nonce', csp_nonce('script-src'))
+            .mergeWith(script_attributes|default)
+        %}
+
+        <script{{ script_attributes }}>
+        (() => {
+            'use strict';
+
+            if( customElements.get('cc-cookie-optin') ) return;
+
+            {% block script_handling %}
+
+            class CcCookieOptin extends HTMLElement {
+
+                constructor() {
+                    super();
+                }
+
+                connectedCallback() {
+                    this._bindEvents();
+                }
+
+                _bindEvents() {
+
+                }
+            }
+
+            customElements.define('cc-cookie-optin', CcCookieOptin);
+
+            {% endblock %}
+
+        })();
+        </script>
+
+    {% endadd %}
+{% endblock %}

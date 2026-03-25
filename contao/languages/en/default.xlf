@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xliff version="1.1">
+<file>
+<body>
+    <!-- MISCELLANEOUS -->
+    <trans-unit id="MSC.cookie_consent.default.accept_label">
+        <target>Bestätigen</target>
+    </trans-unit>
+    <trans-unit id="MSC.cookie_consent.default.text">
+        <target><![CDATA[<p><strong>Cookie Einstellungen</strong></p><p>Durch die Nutzung dieser Webseite erklären Sie sich mit der Verwendung von Cookies einverstanden. Detaillierte Informationen über den Einsatz von Cookies auf dieser Webseite erhalten Sie in der Datenschutzerklärung.</p>]]></target>
+    </trans-unit>
+    <trans-unit id="MSC.cookie_consent.optin_fallback.info">
+        <target><![CDATA[<p><strong>Drittanbieter-Inhalt</strong></p><p>Dieser Inhalt eines Drittanbieters wird aufgrund Ihrer fehlenden Zustimmung zu Drittanbieter-Inhalten nicht angezeigt.</p>]]></target>
+    </trans-unit>
+    <trans-unit id="MSC.cookie_consent.optin_fallback.button_label">
+        <target>Einstellungen ändern</target>
+    </trans-unit>
+    <trans-unit id="MSC.cookie_consent.status.saving">
+        <target>Einstellungen werden gespeichert…</target>
+    </trans-unit>
+    <trans-unit id="MSC.cookie_consent.status.error">
+        <target>Fehler beim Speichern. Bitte erneut versuchen.</target>
+    </trans-unit>
+    <trans-unit id="MSC.cookie_consent.aria.categories">
+        <target>Cookie Kategorien</target>
+    </trans-unit>
+    <trans-unit id="MSC.cookie_consent.aria.choices">
+        <target>Cookie Entscheidungen</target>
+    </trans-unit>
+    <trans-unit id="MSC.cookie_consent.always_active">
+        <target>Immer aktiv</target>
+    </trans-unit>
+    <trans-unit id="MSC.cookie_consent.copyright">
+        <target><![CDATA[Cookie Consent bereitgestellt von <a href="https://www.numero2.de/" title="Top Contao Agentur in Deutschland" target="_blank">numero2</a>]]></target>
+    </trans-unit>
+    <trans-unit id="MSC.cookie_consent.backend.element_optin">
+        <target>Nur sichtbar mit Optin für Tag ID: %s</target>
+    </trans-unit>
+    <!-- ERROR -->
+    <trans-unit id="ERR.cookie_consent.no_root_pages_for_pagescope_current">
+        <target>Sie können keine "Startpunkt einer Webseite" auswählen, wenn Sie zuvor "Nur ausgewählte Seiten" gewählt haben.</target>
+    </trans-unit>
+    <trans-unit id="ERR.cookie_consent.no_forward_redirect_pages_for_pagescope_current">
+        <target>Sie können keine "Weiterleitungsseite" auswählen, wenn Sie zuvor "Nur ausgewählte Seiten" gewählt haben.</target>
+    </trans-unit>
+    <trans-unit id="ERR.cookie_consent.cms_optinlink_deprecation">
+        <target><![CDATA[Innerhalb der letzten 24 Stunden wurde auf der Webseite mindestens einmal der veraltete Insert Tag <code>{{cms_optinlink}}</code> verwendet. Dieser Tag muss durch <code>{{cc_optinlink}}</code> ersetzt werden und wird in einer künftigen Version des Cookie Consent Moduls nicht mehr funktionieren. Weitere Informationen finden sich im System-Log.]]></target>
+    </trans-unit>
+</body>
+</file>
+</xliff>

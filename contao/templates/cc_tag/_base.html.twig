@@ -1,0 +1,21 @@
+{% if tag.section == 'head' %}
+
+    {% add to head %}
+        {{ block('wrapper') }}
+    {% endadd %}
+
+{% else %}
+
+    {% block wrapper %}
+        {% if app.debug %}
+        <!-- BEGIN CC TAG `{{ tag.type }}` ID: {{ tag.id }} -->
+        {% endif %}
+
+        {% block tag %}
+        {% endblock %}
+
+        {% if app.debug %}
+        <!-- END CC TAG -->
+        {% endif %}
+    {% endblock %}
+{% endif %}

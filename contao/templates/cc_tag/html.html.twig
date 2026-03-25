@@ -1,0 +1,5 @@
+{% extends '@Contao/cc_tag/_base.html.twig' %}
+
+{% block tag %}
+    {{ tag.html|insert_tag_raw|raw }}
+{% endblock %}

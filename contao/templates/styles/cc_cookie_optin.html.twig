@@ -1,0 +1,75 @@
+{% extends '@Contao/styles/cc_default.html.twig' %}
+
+{% block styles %}
+
+    dialog {
+        all: unset;
+        display: block;
+        background: var(--cc-bg);
+        border: 1px solid var(--cc-border);
+        border-radius: var(--cc-radius);
+        padding: 1.25rem 1.5rem;
+    }
+
+    dialog[open] {
+        display: block;
+    }
+
+    p {
+        margin: 0 0 1rem;
+        font-family: var(--cc-font);
+        font-size: .875rem;
+        line-height: 1.6;
+        color: var(--cc-text-muted);
+    }
+
+    p:nth-child(1) strong {
+        font-size: 1.0625rem;
+        font-weight: 700;
+        color: var(--cc-text);
+        display: block;
+        margin-bottom: .25rem;
+        font-family: var(--cc-font-heading);
+        letter-spacing: -.01em;
+    }
+
+    .btn {
+        all: unset;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--cc-radius-sm);
+        font-family: var(--cc-font);
+        font-size: .875rem;
+        font-weight: 600;
+        padding: .625rem 1.125rem;
+        transition: background var(--cc-speed), color var(--cc-speed), transform .1s;
+        line-height: 1;
+        white-space: nowrap;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        background: var(--cc-accent);
+        color: var(--cc-accent-text);
+        border: 1.5px solid var(--cc-accent);
+    }
+
+    .btn:hover {
+        background: var(--cc-accent-hover);
+        border-color: var(--cc-accent-hover);
+    }
+
+    .btn:focus-visible {
+        outline: 2px solid var(--cc-accent);
+        outline-offset: 2px;
+    }
+
+    .btn:active {
+        transform: scale(.97);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .btn { transition: none; }
+    }
+
+{% endblock %}

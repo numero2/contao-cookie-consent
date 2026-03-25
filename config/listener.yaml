@@ -1,0 +1,64 @@
+services:
+    _defaults:
+        autoconfigure: true
+        public: true
+
+
+    numero2_cookie_consent.listener.data_container.module:
+        class: numero2\CookieConsentBundle\EventListener\DataContainer\ModuleListener
+        arguments:
+            - '@request_stack'
+            - '@contao.routing.scope_matcher'
+            - '@database_connection'
+            - '@translator'
+
+    numero2_cookie_consent.listener.data_container.tag:
+        class: numero2\CookieConsentBundle\EventListener\DataContainer\TagListener
+        arguments:
+            - '@request_stack'
+            - '@contao.routing.scope_matcher'
+            - '@database_connection'
+            - '@translator'
+
+    numero2_cookie_consent.listener.data_container.template_options:
+        class: numero2\CookieConsentBundle\EventListener\DataContainer\TemplateOptionsListener
+        arguments:
+            - '@request_stack'
+            - '@database_connection'
+            - '@contao.twig.finder_factory'
+
+
+    numero2_cookie_consent.listener.hook.cookie_consent_insert_tag:
+        class: numero2\CookieConsentBundle\EventListener\Hook\CookieConsentInsertTag
+        arguments:
+            - '@request_stack'
+            - '@numero2_cookie_consent.util.cookie_consent'
+            - '@monolog.logger.contao.error'
+
+    numero2_cookie_consent.listener.hook.if_option_insert_tag:
+        class: numero2\CookieConsentBundle\EventListener\Hook\IfOptinInsertTag
+        arguments:
+            - '@request_stack'
+            - '@numero2_cookie_consent.util.cookie_consent'
+
+    numero2_cookie_consent.listener.hook.messages:
+        class: numero2\CookieConsentBundle\EventListener\Hook\MessagesListener
+        arguments:
+            - '@database_connection'
+            - '@translator'
+
+    numero2_cookie_consent.listener.hook.tag:
+        class: numero2\CookieConsentBundle\EventListener\Hook\TagListener
+        arguments:
+            - '@request_stack'
+            - '@contao.routing.scope_matcher'
+            - '@contao.routing.response_context_accessor'
+            - '@numero2_cookie_consent.util.cookie_consent'
+
+
+    numero2_cookie_consent.listener.kernel_response.backend_assets:
+        class: numero2\CookieConsentBundle\EventListener\KernelResponse\BackendAssetsListener
+        arguments:
+            - '@contao.routing.scope_matcher'
+        tags:
+            - kernel.event_subscriber

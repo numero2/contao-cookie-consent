@@ -1,0 +1,5 @@
+{% add "cc_tags" to body %}
+<!-- indexer::stop -->
+{{ tags|join("\n")|raw }}
+<!-- indexer::continue -->
+{% endadd %}

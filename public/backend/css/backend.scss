@@ -1,0 +1,16 @@
+body:has(nav li.current a[href$="do=cc_tags"]) {
+
+    .operations li {
+
+        &:has(> form[action*="&act=create&mode=1"]),
+        &:has(> form[action*="&act=create&mode=2"]) {
+            pointer-events: none;
+            display: none;
+            visibility: hidden;
+        }
+    }
+}
+
+.tl_content .cc_optin {
+    margin-left: 4px;
+}

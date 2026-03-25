@@ -1,0 +1,22 @@
+services:
+    _defaults:
+        autoconfigure: true
+        autowire: true
+
+
+    numero2_cookie_consent.twig.extension.cookie_consent:
+        class: numero2\CookieConsentBundle\Twig\Extension\CookieConsentExtension
+        public: true
+
+    numero2_cookie_consent.twig.runtime.cookie_consent:
+        class: numero2\CookieConsentBundle\Twig\Runtime\CookieConsentRuntime
+        arguments:
+            - '@numero2_cookie_consent.util.cookie_consent'
+
+
+    numero2_cookie_consent.util.cookie_consent:
+        class: numero2\CookieConsentBundle\Util\CookieConsentUtil
+        public: true
+        arguments:
+            - '@request_stack'
+            - '@database_connection'
