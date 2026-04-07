@@ -1,187 +1,246 @@
 <?xml version="1.0"?>
 <xliff version="1.1">
-<file source-language="en">
+<file source-language="en" target-language="fi">
 <body>
     <!-- LEGENDS -->
     <trans-unit id="tl_cc_tag.common_legend">
         <source>General</source>
+        <target>Kenraali</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.description_legend">
         <source>Group Description</source>
+        <target>Ryhmän kuvaus</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.tag_legend">
         <source>Tag Settings</source>
+        <target>Tunnisteen asetukset</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.config_legend">
         <source>Tag Configuration</source>
+        <target>Tunnisteen määritys</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.expert_legend">
         <source>Expert Settings</source>
+        <target>Asiantuntijaasetukset</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.publish_legend">
         <source>Publication</source>
+        <target>Julkaisu</target>
     </trans-unit>
     <!-- FIELDS -->
     <trans-unit id="tl_cc_tag.type.0">
         <source>Tag Type</source>
+        <target>Tunnisteen tyyppi</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.type.1">
         <source>Please select the type of tag.</source>
+        <target>Valitse tunnisteen tyyppi.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.name.0">
         <source>Name</source>
+        <target>Nimi</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.name.1">
         <source>Please give this tag a name.</source>
+        <target>Anna tälle tunnisteelle nimi.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.root.0">
         <source>Set for...</source>
+        <target>Aseta...</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.root.1">
         <source>Determines whether the name and description apply to all page roots or only to a specific page.</source>
+        <target>Määrittää, koskevatko nimi ja kuvaus kaikkia sivun juuria vai vain tiettyä sivua.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.description.0">
         <source>Description</source>
+        <target>Kuvaus</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.description.1">
         <source>This description is displayed to the user as an explanation.</source>
+        <target>Tämä kuvaus näytetään käyttäjälle selityksenä.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.html.0">
         <source>HTML Code</source>
+        <target>HTML-koodi</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.section.0">
         <source>Deliver in</source>
+        <target>Toimita sisään</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.section.1">
         <source>Please select in which area the tag should be delivered.</source>
+        <target>Valitse, mille alueelle tagi toimitetaan.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.fallbackTpl.0">
         <source>Fallback Template</source>
+        <target>Varamalli</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.fallbackTpl.1">
         <source>Here you can specify a "Fallback Template" that will be displayed to the user if the tag is not confirmed.</source>
+        <target>Täällä voit määrittää "varamallin", joka näytetään käyttäjälle, jos tunnistetta ei vahvisteta.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.fallback_text.0">
         <source>Fallback Text</source>
+        <target>Varateksti</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.fallback_text.1">
         <source>Here you can specify a fallback text that will be displayed to the user if the tag is not confirmed.</source>
+        <target>Täällä voit määrittää varatekstin, joka näytetään käyttäjälle, jos tunnistetta ei vahvisteta.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.customTpl.0">
         <source>Custom Template</source>
+        <target>Mukautettu malli</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.customTpl.1">
         <source>Here you can override the default template.</source>
+        <target>Täällä voit ohittaa oletusmallin.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages_scope.0">
         <source>Page Scope</source>
+        <target>Sivun laajuus</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages_scope.1">
         <source>Scope of the selected pages</source>
+        <target>Valittujen sivujen laajuus</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages.0">
         <source>Pages</source>
+        <target>Sivut</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages.1">
         <source>Please select on which pages the page scope should be applied.</source>
+        <target>Valitse, millä sivuilla sivun laajuutta sovelletaan.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages_root.0">
         <source>Pages</source>
+        <target>Sivut</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages_root.1">
         <source>Please select on which page roots this element should be displayed as requiring consent. If nothing is selected, it is assumed that this element is used on multiple page roots.</source>
+        <target>Valitse, millä sivun juurilla tämä elementti näytetään suostumusta vaativana. Jos mitään ei valita, oletetaan, että tätä elementtiä käytetään useiden sivujen juurissa.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.active.0">
         <source>Active?</source>
+        <target>Aktiivinen?</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.active.1">
         <source>Activate this tag?</source>
+        <target>Aktivoidaanko tämä tunniste?</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.enable_on_cookie_accept.0">
         <source>Opt-In / EU-Privacy Compliant</source>
+        <target>Opt-In / EU-tietosuojayhteensopiva</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.enable_on_cookie_accept.1">
         <source>If enabled, this tag will only be delivered if cookies are accepted, otherwise always.</source>
+        <target>Jos tämä tunniste on käytössä, tämä tunniste toimitetaan vain, jos evästeet hyväksytään, muuten aina.</target>
     </trans-unit>
     <!-- OPTIONS -->
     <trans-unit id="tl_cc_tag.types.default">
         <source>-</source>
+        <target>-</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.group">
         <source>Group</source>
+        <target>ryhmä</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.session">
         <source>Session Cookie</source>
+        <target>Istuntoeväste</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.html">
         <source>HTML</source>
+        <target>HTML</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.google_analytics">
         <source>Google Analytics</source>
+        <target>Google Analytics</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.google_tag_manager">
         <source>Google Tag Manager</source>
+        <target>Google Tag Manager</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.facebook_pixel">
         <source>Facebook Pixel</source>
+        <target>Facebook Pixel</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.matomo">
         <source>Matomo</source>
+        <target>Matomo</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.content_module_element">
         <source>Content Element / Frontend Module</source>
+        <target>Sisältöelementti / käyttöliittymämoduuli</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.sections.head">
         <source>Head Section</source>
+        <target>Pääosasto</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.sections.body">
         <source>Body Section</source>
+        <target>Runko-osa</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.page_scopes.none">
         <source>No automatic delivery</source>
+        <target>Ei automaattista toimitusta</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.page_scopes.current_page">
         <source>Only selected pages</source>
+        <target>Vain valitut sivut</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.page_scopes.current_and_direct_children">
         <source>Selected pages and direct subpages</source>
+        <target>Valitut sivut ja suorat alasivut</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.page_scopes.current_and_all_children">
         <source>Selected pages and all subpages</source>
+        <target>Valitut sivut ja kaikki alasivut</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.roots.default">
         <source>all pages</source>
+        <target>kaikki sivut</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.roots.default_initial">
         <source>all pages (save to select more page roots)</source>
+        <target>kaikki sivut (tallenna valitaksesi lisää sivun juuria)</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.roots.specific">
         <source>only for the page "%s"</source>
+        <target>vain sivulle "%s"</target>
     </trans-unit>
     <!-- DEFAULTS -->
     <trans-unit id="tl_cc_tag.default.0.name">
         <source>Necessary</source>
+        <target>Välttämätön</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.0.description">
         <source><![CDATA[<p>Tools that enable essential services and functions, including identity verification, service continuity and site security. This option cannot be declined.</p>]]></source>
+        <target><![CDATA[<p>Työkaluja, jotka mahdollistavat keskeiset palvelut ja toiminnot, mukaan lukien henkilöllisyyden todentamisen, palvelun jatkuvuuden ja sivuston suojauksen. Tätä vaihtoehtoa ei voi hylätä.</p>]]></target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.1.name">
         <source>Statistics</source>
+        <target>Tilastot</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.1.description">
         <source><![CDATA[<p>We collect anonymous data about the use and functionality of our site. We use these insights to improve our products, services and user experience.</p>]]></source>
+        <target><![CDATA[<p>Keräämme anonyymejä tietoja sivustomme käytöstä ja toimivuudesta. Käytämme näitä oivalluksia parantaaksemme tuotteitamme, palveluitamme ja käyttökokemustamme.</p>]]></target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.2.name">
         <source>Marketing</source>
+        <target>Markkinointi</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.2.description">
         <source><![CDATA[<p>Anonymous information we collect to be able to recommend useful products and services to you.</p>]]></source>
+        <target><![CDATA[<p>Keräämme anonyymejä tietoja voidaksemme suositella hyödyllisiä tuotteita ja palveluita sinulle.</p>]]></target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.3.name">
         <source>Third-party Content</source>
+        <target>Kolmannen osapuolen sisältö</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.3.description">
         <source><![CDATA[<p>Content from third parties such as videos from YouTube or maps from Google Maps.</p>]]></source>
+        <target><![CDATA[<p>Sisältö kolmansilta osapuolilta, kuten videot YouTubesta tai kartat Google Mapsista.</p>]]></target>
     </trans-unit>
 </body>
 </file>

@@ -1,84 +1,109 @@
 <?xml version="1.0"?>
 <xliff version="1.1">
-<file source-language="en">
+<file source-language="en" target-language="pl">
 <body>
     <!-- LEGENDS -->
     <trans-unit id="tl_module.cc_tag_visibility_legend">
         <source>Cookie Consent: Opt-In / EU-Privacy</source>
+        <target>Zgoda na pliki cookie: Opt-In / Prywatność UE</target>
     </trans-unit>
     <!-- FIELDS -->
     <trans-unit id="tl_module.cc_override_labels.0">
         <source>Override Label</source>
+        <target>Zastąp etykietę</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_override_labels.1">
         <source>Do you want to set the texts in the Cookie Consent yourself?</source>
+        <target>Chcesz samodzielnie ustawić treść zgody na pliki cookie?</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_label.0">
         <source>Label "Accept"</source>
+        <target>Etykieta „Akceptuj”</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_label.1">
         <source>This text is displayed on the "Accept" button.</source>
+        <target>Ten tekst jest wyświetlany na przycisku „Akceptuj”.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_all_label.0">
         <source>Label "Accept All"</source>
+        <target>Etykieta „Zaakceptuj wszystko”</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_all_label.1">
         <source>If you enter text here, an additional button will be displayed that allows all groups to be accepted at once.</source>
+        <target>Jeżeli wpiszesz tutaj tekst, wyświetli się dodatkowy przycisk umożliwiający jednoczesne zaakceptowanie wszystkich grup.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_text.0">
         <source>Content</source>
+        <target>Treść</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_text.1">
         <source>This content is displayed within the Cookie Consent.</source>
+        <target>Ta treść jest wyświetlana w ramach zgody na pliki cookie.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_exclude_pages.0">
         <source>Do not show Cookie Consent on these pages</source>
+        <target>Nie pokazuj zgody na pliki cookie na tych stronach</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_exclude_pages.1">
         <source>Cookie Consent will not be displayed. The page is usable. No cookies are set on this page. This is useful, for example, for the privacy policy so it is always fully visible and readable.</source>
+        <target>Zgoda na pliki cookie nie będzie wyświetlana. Strona nadaje się do użytku. Na tej stronie nie są ustawione żadne pliki cookie. Przydaje się to np. przy polityce prywatności, dzięki czemu jest ona zawsze w pełni widoczna i czytelna.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_cookie_lifetime.0">
         <source>Duration of Consent</source>
+        <target>Czas trwania zgody</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_cookie_lifetime.1">
         <source>Choose how long the visitor's consent should be stored as a cookie.</source>
+        <target>Wybierz, jak długo zgoda odwiedzającego ma być przechowywana jako plik cookie.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_subdomains.0">
         <source>Apply Consent to Subdomains</source>
+        <target>Zastosuj zgodę do subdomen</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_subdomains.1">
         <source>If enabled, the selection made will automatically be applied to all subdomains.</source>
+        <target>Jeśli ta opcja jest włączona, dokonany wybór zostanie automatycznie zastosowany do wszystkich subdomen.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_hide_copyright.0">
         <source>Hide Copyright Notice?</source>
+        <target>Ukryć informację o prawach autorskich?</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_hide_copyright.1">
         <source>Hides the notice about Cookie Consent being provided by numero2.</source>
+        <target>Ukrywa informację o wyrażeniu zgody na pliki cookie przez numero2.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_visibility.0">
         <source>Show only with explicit consent</source>
+        <target>Pokazuj tylko za wyraźną zgodą</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_visibility.1">
         <source>Show the frontend module only if the user has explicitly given their consent for the corresponding "content element / frontend module" tag.</source>
+        <target>Wyświetl moduł frontendu tylko wtedy, gdy użytkownik wyraźnie wyraził zgodę na odpowiedni tag „element treści / moduł frontendu”.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag.0">
         <source>Content Element / Frontend Module Tag</source>
+        <target>Tag elementu treści/modułu interfejsu</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag.1">
         <source>Select which tag the user must consent to in order to display the frontend module.</source>
+        <target>Wybierz na jaki tag użytkownik musi wyrazić zgodę, aby wyświetlić moduł frontendowy.</target>
     </trans-unit>
     <!-- OPTIONS -->
     <trans-unit id="tl_module.cc_tag_cookie_lifetime_units.days">
         <source>Day(s)</source>
+        <target>Dni)</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_cookie_lifetime_units.weeks">
         <source>Week(s)</source>
+        <target>Tydzień (y)</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_cookie_lifetime_units.months">
         <source>Month(s)</source>
+        <target>Miesiące)</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_cookie_lifetime_units.years">
         <source>Year(s)</source>
+        <target>Rok (lata)</target>
     </trans-unit>
 </body>
 </file>

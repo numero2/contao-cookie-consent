@@ -1,187 +1,246 @@
 <?xml version="1.0"?>
 <xliff version="1.1">
-<file source-language="en">
+<file source-language="en" target-language="pl">
 <body>
     <!-- LEGENDS -->
     <trans-unit id="tl_cc_tag.common_legend">
         <source>General</source>
+        <target>Ogólny</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.description_legend">
         <source>Group Description</source>
+        <target>Opis grupy</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.tag_legend">
         <source>Tag Settings</source>
+        <target>Ustawienia tagów</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.config_legend">
         <source>Tag Configuration</source>
+        <target>Konfiguracja tagu</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.expert_legend">
         <source>Expert Settings</source>
+        <target>Ustawienia eksperckie</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.publish_legend">
         <source>Publication</source>
+        <target>Publikacja</target>
     </trans-unit>
     <!-- FIELDS -->
     <trans-unit id="tl_cc_tag.type.0">
         <source>Tag Type</source>
+        <target>Typ tagu</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.type.1">
         <source>Please select the type of tag.</source>
+        <target>Proszę wybrać typ tagu.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.name.0">
         <source>Name</source>
+        <target>Nazwa</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.name.1">
         <source>Please give this tag a name.</source>
+        <target>Proszę nadać temu znacznikowi nazwę.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.root.0">
         <source>Set for...</source>
+        <target>Zestaw dla...</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.root.1">
         <source>Determines whether the name and description apply to all page roots or only to a specific page.</source>
+        <target>Określa, czy nazwa i opis mają zastosowanie do wszystkich stron głównych, czy tylko do określonej strony.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.description.0">
         <source>Description</source>
+        <target>Opis</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.description.1">
         <source>This description is displayed to the user as an explanation.</source>
+        <target>Opis ten jest wyświetlany użytkownikowi jako wyjaśnienie.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.html.0">
         <source>HTML Code</source>
+        <target>Kod HTML</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.section.0">
         <source>Deliver in</source>
+        <target>Dostarcz</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.section.1">
         <source>Please select in which area the tag should be delivered.</source>
+        <target>Proszę wybrać w jakim rejonie tag ma zostać dostarczony.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.fallbackTpl.0">
         <source>Fallback Template</source>
+        <target>Szablon zastępczy</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.fallbackTpl.1">
         <source>Here you can specify a "Fallback Template" that will be displayed to the user if the tag is not confirmed.</source>
+        <target>Tutaj możesz określić „szablon zastępczy”, który będzie wyświetlany użytkownikowi, jeśli tag nie zostanie potwierdzony.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.fallback_text.0">
         <source>Fallback Text</source>
+        <target>Tekst zastępczy</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.fallback_text.1">
         <source>Here you can specify a fallback text that will be displayed to the user if the tag is not confirmed.</source>
+        <target>Tutaj możesz określić tekst zastępczy, który będzie wyświetlany użytkownikowi, jeśli tag nie zostanie potwierdzony.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.customTpl.0">
         <source>Custom Template</source>
+        <target>Szablon niestandardowy</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.customTpl.1">
         <source>Here you can override the default template.</source>
+        <target>Tutaj możesz zastąpić domyślny szablon.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages_scope.0">
         <source>Page Scope</source>
+        <target>Zakres strony</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages_scope.1">
         <source>Scope of the selected pages</source>
+        <target>Zakres wybranych stron</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages.0">
         <source>Pages</source>
+        <target>Strony</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages.1">
         <source>Please select on which pages the page scope should be applied.</source>
+        <target>Wybierz, na których stronach ma zostać zastosowany zakres strony.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages_root.0">
         <source>Pages</source>
+        <target>Strony</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages_root.1">
         <source>Please select on which page roots this element should be displayed as requiring consent. If nothing is selected, it is assumed that this element is used on multiple page roots.</source>
+        <target>Proszę wybrać, na których stronach głównych ten element powinien być wyświetlany jako wymagający zgody. Jeśli nic nie zostanie wybrane, zakłada się, że ten element jest używany w wielu katalogach głównych stron.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.active.0">
         <source>Active?</source>
+        <target>Aktywny?</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.active.1">
         <source>Activate this tag?</source>
+        <target>Aktywować ten tag?</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.enable_on_cookie_accept.0">
         <source>Opt-In / EU-Privacy Compliant</source>
+        <target>Możliwość wyrażenia zgody / Zgodność z przepisami UE dotyczącymi prywatności</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.enable_on_cookie_accept.1">
         <source>If enabled, this tag will only be delivered if cookies are accepted, otherwise always.</source>
+        <target>Jeśli ta opcja jest włączona, ten tag będzie dostarczany tylko wtedy, gdy akceptowane są pliki cookie, w przeciwnym razie zawsze.</target>
     </trans-unit>
     <!-- OPTIONS -->
     <trans-unit id="tl_cc_tag.types.default">
         <source>-</source>
+        <target>-</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.group">
         <source>Group</source>
+        <target>Grupa</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.session">
         <source>Session Cookie</source>
+        <target>Sesyjny plik cookie</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.html">
         <source>HTML</source>
+        <target>HTML</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.google_analytics">
         <source>Google Analytics</source>
+        <target>Google Analytics</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.google_tag_manager">
         <source>Google Tag Manager</source>
+        <target>Menedżer tagów Google</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.facebook_pixel">
         <source>Facebook Pixel</source>
+        <target>Piksel Facebooka</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.matomo">
         <source>Matomo</source>
+        <target>Matomo</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.content_module_element">
         <source>Content Element / Frontend Module</source>
+        <target>Element treści/moduł frontendowy</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.sections.head">
         <source>Head Section</source>
+        <target>Sekcja Głowy</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.sections.body">
         <source>Body Section</source>
+        <target>Sekcja Ciała</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.page_scopes.none">
         <source>No automatic delivery</source>
+        <target>Brak automatycznej dostawy</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.page_scopes.current_page">
         <source>Only selected pages</source>
+        <target>Tylko wybrane strony</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.page_scopes.current_and_direct_children">
         <source>Selected pages and direct subpages</source>
+        <target>Wybrane strony i bezpośrednie podstrony</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.page_scopes.current_and_all_children">
         <source>Selected pages and all subpages</source>
+        <target>Wybrane strony i wszystkie podstrony</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.roots.default">
         <source>all pages</source>
+        <target>wszystkie strony</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.roots.default_initial">
         <source>all pages (save to select more page roots)</source>
+        <target>wszystkie strony (zapisz, aby wybrać więcej stron głównych)</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.roots.specific">
         <source>only for the page "%s"</source>
+        <target>tylko dla strony”%s"</target>
     </trans-unit>
     <!-- DEFAULTS -->
     <trans-unit id="tl_cc_tag.default.0.name">
         <source>Necessary</source>
+        <target>Niezbędny</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.0.description">
         <source><![CDATA[<p>Tools that enable essential services and functions, including identity verification, service continuity and site security. This option cannot be declined.</p>]]></source>
+        <target><![CDATA[<p>Narzędzia umożliwiające podstawowe usługi i funkcje, w tym weryfikację tożsamości, ciągłość usług i bezpieczeństwo witryny. Tej opcji nie można odrzucić.</p>]]></target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.1.name">
         <source>Statistics</source>
+        <target>Statystyka</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.1.description">
         <source><![CDATA[<p>We collect anonymous data about the use and functionality of our site. We use these insights to improve our products, services and user experience.</p>]]></source>
+        <target><![CDATA[<p>Zbieramy anonimowe dane na temat korzystania i funkcjonalności naszej witryny. Korzystamy z tych spostrzeżeń, aby ulepszyć nasze produkty, usługi i doświadczenie użytkownika.</p>]]></target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.2.name">
         <source>Marketing</source>
+        <target>Marketing</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.2.description">
         <source><![CDATA[<p>Anonymous information we collect to be able to recommend useful products and services to you.</p>]]></source>
+        <target><![CDATA[<p>Anonimowe informacje, które zbieramy, aby móc polecać Ci przydatne produkty i usługi.</p>]]></target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.3.name">
         <source>Third-party Content</source>
+        <target>Treści osób trzecich</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.3.description">
         <source><![CDATA[<p>Content from third parties such as videos from YouTube or maps from Google Maps.</p>]]></source>
+        <target><![CDATA[<p>Treści od osób trzecich, takie jak filmy z YouTube lub mapy z Map Google.</p>]]></target>
     </trans-unit>
 </body>
 </file>

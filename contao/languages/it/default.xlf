@@ -1,50 +1,64 @@
 <?xml version="1.0"?>
 <xliff version="1.1">
-<file source-language="en">
+<file source-language="en" target-language="it">
 <body>
     <!-- MISCELLANEOUS -->
     <trans-unit id="MSC.cookie_consent.default.accept_label">
         <source>Accept</source>
+        <target>Accettare</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.default.text">
         <source><![CDATA[<p><strong>Cookie Settings</strong></p><p>By using this website, you agree to the use of cookies. For detailed information about the use of cookies on this website, please refer to our privacy policy.</p>]]></source>
+        <target><![CDATA[<p><strong>Impostazioni dei cookie</strong></p><p>Utilizzando questo sito web, accetti l'utilizzo dei cookie. Per informazioni dettagliate sull'utilizzo dei cookie su questo sito Web, fare riferimento alla nostra politica sulla privacy.</p>]]></target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.optin_fallback.info">
         <source><![CDATA[<p><strong>Third-party Content</strong></p><p>This third-party content is not displayed due to your missing consent for third-party content.</p>]]></source>
+        <target><![CDATA[<p><strong>Contenuti di terze parti</strong></p><p>Questo contenuto di terze parti non viene visualizzato a causa della mancanza del tuo consenso per i contenuti di terze parti.</p>]]></target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.optin_fallback.button_label">
         <source>Change Settings</source>
+        <target>Modifica impostazioni</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.status.saving">
         <source>Saving settings…</source>
+        <target>Salvataggio delle impostazioni…</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.status.error">
         <source>Error saving. Please try again.</source>
+        <target>Errore durante il salvataggio. Per favore riprova.</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.aria.categories">
         <source>Cookie Categories</source>
+        <target>Categorie di cookie</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.aria.choices">
         <source>Cookie Decisions</source>
+        <target>Decisioni sui cookie</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.always_active">
         <source>Always active</source>
+        <target>Sempre attivo</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.copyright">
         <source><![CDATA[Cookie Consent provided by <a href="https://www.numero2.de/" title="Top Contao Agency in Germany" target="_blank">numero2</a>]]></source>
+        <target><![CDATA[Consenso sui cookie fornito da <a href="https://www.numero2.de/" title="Top Contao Agency in Germany" target="_blank">numero2</a>]]></target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.backend.element_optin">
         <source>Only visible with opt-in for tag ID: %s</source>
+        <target>Visibile solo con l'attivazione dell'ID tag: %s</target>
     </trans-unit>
     <!-- ERROR -->
     <trans-unit id="ERR.cookie_consent.no_root_pages_for_pagescope_current">
         <source>You cannot select a "root page" when you have previously selected "Only selected pages".</source>
+        <target>Non è possibile selezionare una "pagina principale" se in precedenza è stato selezionato "Solo pagine selezionate".</target>
     </trans-unit>
     <trans-unit id="ERR.cookie_consent.no_forward_redirect_pages_for_pagescope_current">
         <source>You cannot select a "redirect page" when you have previously selected "Only selected pages".</source>
+        <target>Non è possibile selezionare una "pagina di reindirizzamento" se in precedenza è stato selezionato "Solo pagine selezionate".</target>
     </trans-unit>
     <trans-unit id="ERR.cookie_consent.cms_optinlink_deprecation">
         <source><![CDATA[Within the last 24 hours, the deprecated insert tag <code>{{cms_optinlink}}</code> has been used on the website at least once. This tag must be replaced with <code>{{cc_optinlink}}</code> and will no longer work in a future version of the Cookie Consent module. Further information can be found in the system log.]]></source>
+        <target><![CDATA[Nelle ultime 24 ore, il tag di inserimento deprecato <code>{{cms_optinlink}}</code> è stato utilizzato sul sito almeno una volta. Questo tag deve essere sostituito con <code>{{cc_optinlink}}</code> e non funzionerà più in una versione futura del modulo di consenso sui cookie. Ulteriori informazioni possono essere trovate nel registro di sistema.]]></target>
     </trans-unit>
 </body>
 </file>

@@ -1,84 +1,109 @@
 <?xml version="1.0"?>
 <xliff version="1.1">
-<file source-language="en">
+<file source-language="en" target-language="da">
 <body>
     <!-- LEGENDS -->
     <trans-unit id="tl_module.cc_tag_visibility_legend">
         <source>Cookie Consent: Opt-In / EU-Privacy</source>
+        <target>Cookie Consent: Opt-In / EU-Privacy</target>
     </trans-unit>
     <!-- FIELDS -->
     <trans-unit id="tl_module.cc_override_labels.0">
         <source>Override Label</source>
+        <target>Tilsidesæt etiket</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_override_labels.1">
         <source>Do you want to set the texts in the Cookie Consent yourself?</source>
+        <target>Vil du selv angive teksterne i Cookie Consent?</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_label.0">
         <source>Label "Accept"</source>
+        <target>Etiket "Bekræft"</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_label.1">
         <source>This text is displayed on the "Accept" button.</source>
+        <target>Denne tekst vises på knappen "Bekræft".</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_all_label.0">
         <source>Label "Accept All"</source>
+        <target>Etiket "Accepter alle"</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_all_label.1">
         <source>If you enter text here, an additional button will be displayed that allows all groups to be accepted at once.</source>
+        <target>Hvis du indtaster en tekst her, vises en ekstra knap, som gør det muligt at acceptere alle grupper på én gang.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_text.0">
         <source>Content</source>
+        <target>Indhold</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_text.1">
         <source>This content is displayed within the Cookie Consent.</source>
+        <target>Dette indhold vises i Cookie Consent.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_exclude_pages.0">
         <source>Do not show Cookie Consent on these pages</source>
+        <target>Vis ikke Cookie Consent på disse sider</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_exclude_pages.1">
         <source>Cookie Consent will not be displayed. The page is usable. No cookies are set on this page. This is useful, for example, for the privacy policy so it is always fully visible and readable.</source>
+        <target>Cookie Consent vises ikke. Siden kan bruges. Der sættes ingen cookies på denne side. Det er f.eks. nyttigt for privatlivspolitikken, så den altid er fuldt synlig og læsbar.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_cookie_lifetime.0">
         <source>Duration of Consent</source>
+        <target>Samtykkets varighed</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_cookie_lifetime.1">
         <source>Choose how long the visitor's consent should be stored as a cookie.</source>
+        <target>Vælg hvor længe besøgendes samtykke skal gemmes som en cookie.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_subdomains.0">
         <source>Apply Consent to Subdomains</source>
+        <target>Anvend samtykke på underdomæner</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_subdomains.1">
         <source>If enabled, the selection made will automatically be applied to all subdomains.</source>
+        <target>Hvis aktiveret, anvendes det valgte automatisk på alle underdomæner.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_hide_copyright.0">
         <source>Hide Copyright Notice?</source>
+        <target>Skjul copyright-meddelelse?</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_hide_copyright.1">
         <source>Hides the notice about Cookie Consent being provided by numero2.</source>
+        <target>Skjuler meddelelsen om, at Cookie Consent leveres af numero2.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_visibility.0">
         <source>Show only with explicit consent</source>
+        <target>Vis kun ved udtrykkeligt samtykke</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_visibility.1">
         <source>Show the frontend module only if the user has explicitly given their consent for the corresponding "content element / frontend module" tag.</source>
+        <target>Vis kun frontend-modulet, hvis brugeren udtrykkeligt har givet samtykke til det tilsvarende tag for "indholdselement / frontend-modul".</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag.0">
         <source>Content Element / Frontend Module Tag</source>
+        <target>Tag for indholdselement / frontend-modul</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag.1">
         <source>Select which tag the user must consent to in order to display the frontend module.</source>
+        <target>Vælg hvilket tag brugeren skal give samtykke til for at vise frontend-modulet.</target>
     </trans-unit>
     <!-- OPTIONS -->
     <trans-unit id="tl_module.cc_tag_cookie_lifetime_units.days">
         <source>Day(s)</source>
+        <target>Dag(e)</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_cookie_lifetime_units.weeks">
         <source>Week(s)</source>
+        <target>Uge(r)</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_cookie_lifetime_units.months">
         <source>Month(s)</source>
+        <target>Måned(er)</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_cookie_lifetime_units.years">
         <source>Year(s)</source>
+        <target>År</target>
     </trans-unit>
 </body>
 </file>

@@ -1,27 +1,33 @@
 <?xml version="1.0"?>
 <xliff version="1.1">
-<file source-language="en">
+<file source-language="en" target-language="it">
 <body>
     <!-- BACKEND -->
     <trans-unit id="MOD.cc_tags.0">
         <source>Cookie Consent</source>
+        <target>Consenso sui cookie</target>
     </trans-unit>
     <trans-unit id="MOD.cc_tags.1">
         <source>Manage groups and tags for Cookie Consent</source>
+        <target>Gestisci gruppi e tag per il consenso sui cookie</target>
     </trans-unit>
     <!-- CONTENT ELEMENTS -->
     <trans-unit id="CTE.cookie_consent">
         <source>Cookie Consent</source>
+        <target>Consenso sui cookie</target>
     </trans-unit>
     <!-- FRONTEND -->
     <trans-unit id="FMD.cookie_consent">
         <source>Cookie Consent</source>
+        <target>Consenso sui cookie</target>
     </trans-unit>
     <trans-unit id="FMD.cc_cookie_consent.0">
         <source>Cookie Consent</source>
+        <target>Consenso sui cookie</target>
     </trans-unit>
     <trans-unit id="FMD.cc_cookie_consent.1">
         <source>Generates the Cookie Consent dialog for tag consent</source>
+        <target>Genera la finestra di dialogo Consenso sui cookie per il consenso dei tag</target>
     </trans-unit>
 </body>
 </file>

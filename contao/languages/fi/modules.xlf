@@ -1,27 +1,33 @@
 <?xml version="1.0"?>
 <xliff version="1.1">
-<file source-language="en">
+<file source-language="en" target-language="fi">
 <body>
     <!-- BACKEND -->
     <trans-unit id="MOD.cc_tags.0">
         <source>Cookie Consent</source>
+        <target>Evästeen suostumus</target>
     </trans-unit>
     <trans-unit id="MOD.cc_tags.1">
         <source>Manage groups and tags for Cookie Consent</source>
+        <target>Hallitse evästeiden suostumuksen ryhmiä ja tunnisteita</target>
     </trans-unit>
     <!-- CONTENT ELEMENTS -->
     <trans-unit id="CTE.cookie_consent">
         <source>Cookie Consent</source>
+        <target>Evästeen suostumus</target>
     </trans-unit>
     <!-- FRONTEND -->
     <trans-unit id="FMD.cookie_consent">
         <source>Cookie Consent</source>
+        <target>Evästeen suostumus</target>
     </trans-unit>
     <trans-unit id="FMD.cc_cookie_consent.0">
         <source>Cookie Consent</source>
+        <target>Evästeen suostumus</target>
     </trans-unit>
     <trans-unit id="FMD.cc_cookie_consent.1">
         <source>Generates the Cookie Consent dialog for tag consent</source>
+        <target>Luo Evästeen suostumus -valintaikkunan tagin suostumusta varten</target>
     </trans-unit>
 </body>
 </file>

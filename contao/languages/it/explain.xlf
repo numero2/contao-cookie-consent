@@ -1,44 +1,56 @@
 <?xml version="1.0"?>
 <xliff version="1.1">
-<file source-language="en">
+<file source-language="en" target-language="it">
 <body>
     <!-- OPTIN FALLBACK -->
     <trans-unit id="XPL.ccOptinFallback.0.0">
         <source>Note:</source>
+        <target>Nota:</target>
     </trans-unit>
     <trans-unit id="XPL.ccOptinFallback.0.1">
         <source>If the user did not consent to the group in which the content element/frontend module is located, they will see the "Fallback Text". This text should contain a link that displays the Cookie-Consent dialog again. The following insert tag can be used to create the link (e.g., also in the privacy policy).</source>
+        <target>Se l'utente non ha acconsentito al gruppo in cui si trova l'elemento di contenuto/modulo frontend, vedrà il "Testo di riserva". Questo testo dovrebbe contenere un collegamento che visualizzi nuovamente la finestra di dialogo di consenso ai cookie. Per creare il collegamento è possibile utilizzare il seguente tag di inserimento (ad es. anche nell'informativa sulla privacy).</target>
     </trans-unit>
     <trans-unit id="XPL.ccOptinFallback.1.0">
         <source><![CDATA[{{cc_optinlink}}]]></source>
+        <target><![CDATA[{{cc_optinlink}}]]></target>
     </trans-unit>
     <trans-unit id="XPL.ccOptinFallback.1.1">
         <source>Creates a link that displays the Cookie-Consent dialog again so the user can consent to the use of the required group. After consent, the browser window will automatically scroll to the original element.</source>
+        <target>Crea un collegamento che visualizza nuovamente la finestra di dialogo Consenso cookie in modo che l'utente possa acconsentire all'utilizzo del gruppo richiesto. Dopo il consenso, la finestra del browser scorrerà automaticamente fino all'elemento originario.</target>
     </trans-unit>
     <!-- COOKIE BAR / OPTIN DESCRIPTION -->
     <trans-unit id="XPL.ccTagDescription.0.0">
         <source>Note:</source>
+        <target>Nota:</target>
     </trans-unit>
     <trans-unit id="XPL.ccTagDescription.0.1">
         <source>The Cookie Bar / Tracking Opt-In comes with several insert tags that can be used within the page to control content delivery.</source>
+        <target>L'attivazione della barra dei cookie/tracciamento viene fornita con diversi tag di inserimento che possono essere utilizzati all'interno della pagina per controllare la consegna dei contenuti.</target>
     </trans-unit>
     <trans-unit id="XPL.ccTagDescription.1.0">
         <source><![CDATA[{{cc_optinlink}}]]></source>
+        <target><![CDATA[{{cc_optinlink}}]]></target>
     </trans-unit>
     <trans-unit id="XPL.ccTagDescription.1.1">
         <source>Creates a link that displays the Cookie-Consent dialog again so the user can consent to the use of the required group. After consent, the browser window will automatically scroll to the original element.</source>
+        <target>Crea un collegamento che visualizza nuovamente la finestra di dialogo Consenso cookie in modo che l'utente possa acconsentire all'utilizzo del gruppo richiesto. Dopo il consenso, la finestra del browser scorrerà automaticamente fino all'elemento originario.</target>
     </trans-unit>
     <trans-unit id="XPL.ccTagDescription.2.0">
         <source><![CDATA[{{ifoptin::*}}]]></source>
+        <target><![CDATA[{{ifoptin::*}}]]></target>
     </trans-unit>
     <trans-unit id="XPL.ccTagDescription.2.1">
         <source><![CDATA[This tag is completely removed if the user did not consent to the corresponding element. The parameter is the ID of the tag (e.g., Google Analytics). This allows content in templates to be delivered depending on whether the user has consented to the use of a specific tag. <code>{{ifoptin::1}}&lt;h1&gt;Has consented&lt;/h1&gt;{{ifoptin}}</code>]]></source>
+        <target><![CDATA[Questo tag viene completamente rimosso se l'utente non ha acconsentito all'elemento corrispondente. Il parametro è l'ID del tag (ad esempio, Google Analytics). Ciò consente di fornire il contenuto nei modelli a seconda che l'utente abbia acconsentito all'uso di un tag specifico. <code>{{ifoptin::1}}&lt;h1&gt;Ha acconsentito&lt;/h1&gt;{{ifoptin}}</code>]]></target>
     </trans-unit>
     <trans-unit id="XPL.ccTagDescription.3.0">
         <source><![CDATA[{{ifnoptin::*}}]]></source>
+        <target><![CDATA[{{ifnoptin::*}}]]></target>
     </trans-unit>
     <trans-unit id="XPL.ccTagDescription.3.1">
         <source><![CDATA[This tag is completely removed if the user has consented to the corresponding element. The parameter is the ID of the tag (e.g., Google Analytics). This allows content in templates to be delivered depending on whether the user has not consented to the use of a specific tag. <code>{{ifnoptin::1}}&lt;h1&gt;Has not consented&lt;/h1&gt;{{ifnoptin}}</code>]]></source>
+        <target><![CDATA[Questo tag viene completamente rimosso se l'utente ha acconsentito all'elemento corrispondente. Il parametro è l'ID del tag (ad esempio, Google Analytics). Ciò consente di fornire il contenuto nei modelli a seconda che l'utente non abbia acconsentito all'uso di un tag specifico. <code>{{ifnoptin::1}}&lt;h1&gt;Non ha acconsentito&lt;/h1&gt;{{ifnoptin}}</code>]]></target>
     </trans-unit>
 </body>
 </file>

@@ -149,3 +149,6 @@ The following cookies are set by this bundle:
 ### Legal stuff ⚖️
 
 We cannot guarantee complete legal compliance for your specific use case. Use this bundle at your own risk, or consult a lawyer if you are unsure about your configuration. We are happy to help with **technical questions**, but please understand that we cannot provide legal advice.
+
+#### Consent Logs
+This bundle does not maintain any server-side logs of individual user consent. As the extension does not require user accounts, it is technically impractical to link a consent decision to a specific individual or IP address. Instead, user consent—or rejection—is recorded exclusively via a cookie stored on the user’s device. This approach ensures that consent can be reliably verified for each user while avoiding the storage of personal data on the server, in line with GDPR principles of data minimization and privacy by design.

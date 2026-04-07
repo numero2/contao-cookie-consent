@@ -1,187 +1,246 @@
 <?xml version="1.0"?>
 <xliff version="1.1">
-<file source-language="en">
+<file source-language="en" target-language="da">
 <body>
     <!-- LEGENDS -->
     <trans-unit id="tl_cc_tag.common_legend">
         <source>General</source>
+        <target>Generelt</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.description_legend">
         <source>Group Description</source>
+        <target>Gruppebeskrivelse</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.tag_legend">
         <source>Tag Settings</source>
+        <target>Tag-indstillinger</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.config_legend">
         <source>Tag Configuration</source>
+        <target>Tag-konfiguration</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.expert_legend">
         <source>Expert Settings</source>
+        <target>Ekspertindstillinger</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.publish_legend">
         <source>Publication</source>
+        <target>Publicering</target>
     </trans-unit>
     <!-- FIELDS -->
     <trans-unit id="tl_cc_tag.type.0">
         <source>Tag Type</source>
+        <target>Tag-type</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.type.1">
         <source>Please select the type of tag.</source>
+        <target>Vælg venligst typen af tag.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.name.0">
         <source>Name</source>
+        <target>Navn</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.name.1">
         <source>Please give this tag a name.</source>
+        <target>Giv venligst dette tag et navn.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.root.0">
         <source>Set for...</source>
+        <target>Angiv for...</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.root.1">
         <source>Determines whether the name and description apply to all page roots or only to a specific page.</source>
+        <target>Bestemmer, om navn og beskrivelse gælder for alle rod-sider eller kun for en bestemt side.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.description.0">
         <source>Description</source>
+        <target>Beskrivelse</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.description.1">
         <source>This description is displayed to the user as an explanation.</source>
+        <target>Denne beskrivelse vises til brugeren som forklaring.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.html.0">
         <source>HTML Code</source>
+        <target>HTML-kode</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.section.0">
         <source>Deliver in</source>
+        <target>Indsæt i</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.section.1">
         <source>Please select in which area the tag should be delivered.</source>
+        <target>Vælg venligst i hvilket område tagget skal indsættes.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.fallbackTpl.0">
         <source>Fallback Template</source>
+        <target>Fallback-template</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.fallbackTpl.1">
         <source>Here you can specify a "Fallback Template" that will be displayed to the user if the tag is not confirmed.</source>
+        <target>Her kan du angive en "fallback-template", som vises til brugeren, hvis tagget ikke bekræftes.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.fallback_text.0">
         <source>Fallback Text</source>
+        <target>Fallback-tekst</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.fallback_text.1">
         <source>Here you can specify a fallback text that will be displayed to the user if the tag is not confirmed.</source>
+        <target>Her kan du angive en fallback-tekst, som vises til brugeren, hvis tagget ikke bekræftes.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.customTpl.0">
         <source>Custom Template</source>
+        <target>Tilpasset template</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.customTpl.1">
         <source>Here you can override the default template.</source>
+        <target>Her kan du tilsidesætte standard-templaten.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages_scope.0">
         <source>Page Scope</source>
+        <target>Sideomfang</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages_scope.1">
         <source>Scope of the selected pages</source>
+        <target>Omfang for de valgte sider</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages.0">
         <source>Pages</source>
+        <target>Sider</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages.1">
         <source>Please select on which pages the page scope should be applied.</source>
+        <target>Vælg venligst hvilke sider sideomfanget skal anvendes på.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages_root.0">
         <source>Pages</source>
+        <target>Sider</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.pages_root.1">
         <source>Please select on which page roots this element should be displayed as requiring consent. If nothing is selected, it is assumed that this element is used on multiple page roots.</source>
+        <target>Vælg venligst på hvilke rod-sider dette element skal vises som samtykkekrævende. Hvis intet er valgt, antages det, at dette element bruges på flere rod-sider.</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.active.0">
         <source>Active?</source>
+        <target>Aktiv?</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.active.1">
         <source>Activate this tag?</source>
+        <target>Aktivér dette tag?</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.enable_on_cookie_accept.0">
         <source>Opt-In / EU-Privacy Compliant</source>
+        <target>Opt-In / EU-Privacy-kompatibel</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.enable_on_cookie_accept.1">
         <source>If enabled, this tag will only be delivered if cookies are accepted, otherwise always.</source>
+        <target>Hvis aktiveret, indsættes dette tag kun, hvis cookies er accepteret, ellers altid.</target>
     </trans-unit>
     <!-- OPTIONS -->
     <trans-unit id="tl_cc_tag.types.default">
         <source>-</source>
+        <target>-</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.group">
         <source>Group</source>
+        <target>Gruppe</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.session">
         <source>Session Cookie</source>
+        <target>Sessionscookie</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.html">
         <source>HTML</source>
+        <target>HTML</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.google_analytics">
         <source>Google Analytics</source>
+        <target>Google Analytics</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.google_tag_manager">
         <source>Google Tag Manager</source>
+        <target>Google Tag Manager</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.facebook_pixel">
         <source>Facebook Pixel</source>
+        <target>Facebook Pixel</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.matomo">
         <source>Matomo</source>
+        <target>Matomo</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.types.content_module_element">
         <source>Content Element / Frontend Module</source>
+        <target>Indholdselement / frontend-modul</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.sections.head">
         <source>Head Section</source>
+        <target>Head-sektion</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.sections.body">
         <source>Body Section</source>
+        <target>Body-sektion</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.page_scopes.none">
         <source>No automatic delivery</source>
+        <target>Ingen automatisk indsættelse</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.page_scopes.current_page">
         <source>Only selected pages</source>
+        <target>Kun valgte sider</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.page_scopes.current_and_direct_children">
         <source>Selected pages and direct subpages</source>
+        <target>Valgte sider og direkte undersider</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.page_scopes.current_and_all_children">
         <source>Selected pages and all subpages</source>
+        <target>Valgte sider og alle undersider</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.roots.default">
         <source>all pages</source>
+        <target>alle sider</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.roots.default_initial">
         <source>all pages (save to select more page roots)</source>
+        <target>alle sider (gem for at kunne vælge flere rod-sider)</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.roots.specific">
         <source>only for the page "%s"</source>
+        <target>kun for siden "%s"</target>
     </trans-unit>
     <!-- DEFAULTS -->
     <trans-unit id="tl_cc_tag.default.0.name">
         <source>Necessary</source>
+        <target>Nødvendig</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.0.description">
         <source><![CDATA[<p>Tools that enable essential services and functions, including identity verification, service continuity and site security. This option cannot be declined.</p>]]></source>
+        <target><![CDATA[<p>Værktøjer, der muliggør essentielle tjenester og funktioner, herunder identitetsbekræftelse, servicekontinuitet og sidesikkerhed. Denne mulighed kan ikke fravælges.</p>]]></target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.1.name">
         <source>Statistics</source>
+        <target>Statistik</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.1.description">
         <source><![CDATA[<p>We collect anonymous data about the use and functionality of our site. We use these insights to improve our products, services and user experience.</p>]]></source>
+        <target><![CDATA[<p>Vi indsamler anonyme data om brugen og funktionaliteten af vores side. Vi bruger denne indsigt til at forbedre vores produkter, tjenester og brugeroplevelse.</p>]]></target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.2.name">
         <source>Marketing</source>
+        <target>Markedsføring</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.2.description">
         <source><![CDATA[<p>Anonymous information we collect to be able to recommend useful products and services to you.</p>]]></source>
+        <target><![CDATA[<p>Anonyme oplysninger, som vi indsamler for at kunne anbefale nyttige produkter og tjenester til dig.</p>]]></target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.3.name">
         <source>Third-party Content</source>
+        <target>Tredjepartsindhold</target>
     </trans-unit>
     <trans-unit id="tl_cc_tag.default.3.description">
         <source><![CDATA[<p>Content from third parties such as videos from YouTube or maps from Google Maps.</p>]]></source>
+        <target><![CDATA[<p>Indhold fra tredjeparter, som f.eks. videoer fra YouTube eller kort fra Google Maps.</p>]]></target>
     </trans-unit>
 </body>
 </file>

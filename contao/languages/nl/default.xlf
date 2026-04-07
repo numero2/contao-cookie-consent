@@ -1,50 +1,64 @@
 <?xml version="1.0"?>
 <xliff version="1.1">
-<file source-language="en">
+<file source-language="en" target-language="nl">
 <body>
     <!-- MISCELLANEOUS -->
     <trans-unit id="MSC.cookie_consent.default.accept_label">
         <source>Accept</source>
+        <target>Accepteren</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.default.text">
         <source><![CDATA[<p><strong>Cookie Settings</strong></p><p>By using this website, you agree to the use of cookies. For detailed information about the use of cookies on this website, please refer to our privacy policy.</p>]]></source>
+        <target><![CDATA[<p><strong>Cookie-instellingen</strong></p><p>Door deze website te gebruiken, gaat u akkoord met het gebruik van cookies. Voor gedetailleerde informatie over het gebruik van cookies op deze website verwijzen wij u naar ons privacybeleid.</p>]]></target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.optin_fallback.info">
         <source><![CDATA[<p><strong>Third-party Content</strong></p><p>This third-party content is not displayed due to your missing consent for third-party content.</p>]]></source>
+        <target><![CDATA[<p><strong>Inhoud van derden</strong></p><p>Deze inhoud van derden wordt niet weergegeven vanwege uw ontbrekende toestemming voor inhoud van derden.</p>]]></target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.optin_fallback.button_label">
         <source>Change Settings</source>
+        <target>Wijzig instellingen</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.status.saving">
         <source>Saving settings…</source>
+        <target>Instellingen opslaan…</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.status.error">
         <source>Error saving. Please try again.</source>
+        <target>Fout bij opslaan. Probeer het opnieuw.</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.aria.categories">
         <source>Cookie Categories</source>
+        <target>Cookie-categorieën</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.aria.choices">
         <source>Cookie Decisions</source>
+        <target>Cookie-beslissingen</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.always_active">
         <source>Always active</source>
+        <target>Altijd actief</target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.copyright">
         <source><![CDATA[Cookie Consent provided by <a href="https://www.numero2.de/" title="Top Contao Agency in Germany" target="_blank">numero2</a>]]></source>
+        <target><![CDATA[Cookie-toestemming verstrekt door <a href="https://www.numero2.de/" title="Top Contao Agency in Germany" target="_blank">numero2</a>]]></target>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.backend.element_optin">
         <source>Only visible with opt-in for tag ID: %s</source>
+        <target>Alleen zichtbaar met aanmelding voor tag-ID: %s</target>
     </trans-unit>
     <!-- ERROR -->
     <trans-unit id="ERR.cookie_consent.no_root_pages_for_pagescope_current">
         <source>You cannot select a "root page" when you have previously selected "Only selected pages".</source>
+        <target>U kunt geen "hoofdpagina" selecteren als u eerder "Alleen geselecteerde pagina's" hebt geselecteerd.</target>
     </trans-unit>
     <trans-unit id="ERR.cookie_consent.no_forward_redirect_pages_for_pagescope_current">
         <source>You cannot select a "redirect page" when you have previously selected "Only selected pages".</source>
+        <target>U kunt geen "omleidingspagina" selecteren als u eerder "Alleen geselecteerde pagina's" hebt geselecteerd.</target>
     </trans-unit>
     <trans-unit id="ERR.cookie_consent.cms_optinlink_deprecation">
         <source><![CDATA[Within the last 24 hours, the deprecated insert tag <code>{{cms_optinlink}}</code> has been used on the website at least once. This tag must be replaced with <code>{{cc_optinlink}}</code> and will no longer work in a future version of the Cookie Consent module. Further information can be found in the system log.]]></source>
+        <target><![CDATA[Binnen de afgelopen 24 uur is de invoegtag verouderd <code>{{cms_optinlink}}</code> minstens één keer op de website is gebruikt. Deze tag moet worden vervangen door <code>{{cc_optinlink}}</code> en zal niet langer werken in een toekomstige versie van de Cookie Consent-module. Meer informatie vindt u in het systeemlogboek.]]></target>
     </trans-unit>
 </body>
 </file>

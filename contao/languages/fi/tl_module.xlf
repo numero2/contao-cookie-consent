@@ -1,84 +1,109 @@
 <?xml version="1.0"?>
 <xliff version="1.1">
-<file source-language="en">
+<file source-language="en" target-language="fi">
 <body>
     <!-- LEGENDS -->
     <trans-unit id="tl_module.cc_tag_visibility_legend">
         <source>Cookie Consent: Opt-In / EU-Privacy</source>
+        <target>Evästeen suostumus: Opt-In / EU-tietosuoja</target>
     </trans-unit>
     <!-- FIELDS -->
     <trans-unit id="tl_module.cc_override_labels.0">
         <source>Override Label</source>
+        <target>Ohita tunniste</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_override_labels.1">
         <source>Do you want to set the texts in the Cookie Consent yourself?</source>
+        <target>Haluatko asettaa evästeen suostumuksen tekstit itse?</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_label.0">
         <source>Label "Accept"</source>
+        <target>Tunniste "Hyväksy"</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_label.1">
         <source>This text is displayed on the "Accept" button.</source>
+        <target>Tämä teksti näkyy "Hyväksy"-painikkeessa.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_all_label.0">
         <source>Label "Accept All"</source>
+        <target>Tunniste "Hyväksy kaikki"</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_all_label.1">
         <source>If you enter text here, an additional button will be displayed that allows all groups to be accepted at once.</source>
+        <target>Jos kirjoitat tähän tekstiä, näkyviin tulee lisäpainike, jonka avulla kaikki ryhmät voidaan hyväksyä kerralla.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_text.0">
         <source>Content</source>
+        <target>Sisältö</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_text.1">
         <source>This content is displayed within the Cookie Consent.</source>
+        <target>Tämä sisältö näkyy evästeen suostumuksessa.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_exclude_pages.0">
         <source>Do not show Cookie Consent on these pages</source>
+        <target>Älä näytä evästeiden käyttöä näillä sivuilla</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_exclude_pages.1">
         <source>Cookie Consent will not be displayed. The page is usable. No cookies are set on this page. This is useful, for example, for the privacy policy so it is always fully visible and readable.</source>
+        <target>Evästeen suostumusta ei näytetä. Sivu on käyttökelpoinen. Tälle sivulle ei ole asetettu evästeitä. Tästä on hyötyä esimerkiksi tietosuojaselosteen kannalta, joten se on aina täysin näkyvissä ja luettavissa.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_cookie_lifetime.0">
         <source>Duration of Consent</source>
+        <target>Suostumuksen kesto</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_cookie_lifetime.1">
         <source>Choose how long the visitor's consent should be stored as a cookie.</source>
+        <target>Valitse, kuinka kauan vierailijan suostumus tallennetaan evästeenä.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_subdomains.0">
         <source>Apply Consent to Subdomains</source>
+        <target>Käytä suostumusta aliverkkotunnuksiin</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_accept_subdomains.1">
         <source>If enabled, the selection made will automatically be applied to all subdomains.</source>
+        <target>Jos tämä on käytössä, tehtyä valintaa sovelletaan automaattisesti kaikkiin aliverkkotunnuksiin.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_hide_copyright.0">
         <source>Hide Copyright Notice?</source>
+        <target>Piilotetaanko tekijänoikeusilmoitus?</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_hide_copyright.1">
         <source>Hides the notice about Cookie Consent being provided by numero2.</source>
+        <target>Piilottaa ilmoituksen numero2:n antamasta evästesuostumuksesta.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_visibility.0">
         <source>Show only with explicit consent</source>
+        <target>Näytä vain nimenomaisella suostumuksella</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_visibility.1">
         <source>Show the frontend module only if the user has explicitly given their consent for the corresponding "content element / frontend module" tag.</source>
+        <target>Näytä käyttöliittymämoduuli vain, jos käyttäjä on nimenomaisesti antanut suostumuksensa vastaavalle "content element / frontend module" -tunnisteelle.</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag.0">
         <source>Content Element / Frontend Module Tag</source>
+        <target>Sisältöelementti / Frontend Module Tag</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag.1">
         <source>Select which tag the user must consent to in order to display the frontend module.</source>
+        <target>Valitse tunniste, johon käyttäjän on hyväksyttävä käyttöliittymämoduulin näyttäminen.</target>
     </trans-unit>
     <!-- OPTIONS -->
     <trans-unit id="tl_module.cc_tag_cookie_lifetime_units.days">
         <source>Day(s)</source>
+        <target>päivä(t)</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_cookie_lifetime_units.weeks">
         <source>Week(s)</source>
+        <target>Viikko(t)</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_cookie_lifetime_units.months">
         <source>Month(s)</source>
+        <target>Kuukausi(t)</target>
     </trans-unit>
     <trans-unit id="tl_module.cc_tag_cookie_lifetime_units.years">
         <source>Year(s)</source>
+        <target>Vuodet</target>
     </trans-unit>
 </body>
 </file>

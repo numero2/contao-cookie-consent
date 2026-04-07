@@ -1,23 +1,28 @@
 <?xml version="1.0"?>
 <xliff version="1.1">
-<file source-language="en">
+<file source-language="en" target-language="fr">
 <body>
     <!-- LEGENDS -->
     <trans-unit id="tl_content.cc_tag_visibility_legend">
         <source>Cookie Consent: Opt-In / EU-Privacy</source>
+        <target>Consentement aux cookies : Opt-In / Confidentialité UE</target>
     </trans-unit>
     <!-- FIELDS -->
     <trans-unit id="tl_content.cc_tag_visibility.0">
         <source>Show only with explicit consent</source>
+        <target>Afficher uniquement avec le consentement explicite</target>
     </trans-unit>
     <trans-unit id="tl_content.cc_tag_visibility.1">
         <source>Show the frontend module only if the user has explicitly given their consent for the corresponding "content element / frontend module" tag.</source>
+        <target>Afficher le module frontend uniquement si l'utilisateur a explicitement donné son consentement pour la balise "élément de contenu / module frontend" correspondante.</target>
     </trans-unit>
     <trans-unit id="tl_content.cc_tag.0">
         <source>Content Element / Frontend Module Tag</source>
+        <target>Élément de contenu/balise de module frontal</target>
     </trans-unit>
     <trans-unit id="tl_content.cc_tag.1">
         <source>Select which tag the user must consent to in order to display the frontend module.</source>
+        <target>Sélectionnez la balise à laquelle l'utilisateur doit consentir pour afficher le module frontend.</target>
     </trans-unit>
 </body>
 </file>

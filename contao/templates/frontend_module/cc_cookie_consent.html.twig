@@ -93,7 +93,7 @@
     </button>
     {% endblock %}
 
-    {% if cc_accept_all_label|default('')|length %}
+    {% if cc_override_labels and cc_accept_all_label|default('')|length %}
         {% set acceptLabelAll = cc_accept_all_label|insert_tag %}
         {% block shadow_btn_accept_all %}
         <button class="btn all" part="btn btn-all" type="submit" name="choice" value="accept_all" aria-label="{{ acceptLabelAll }}">
