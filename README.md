@@ -11,6 +11,8 @@ A cookie consent solution for Contao CMS - the drop-in replacement for the cooki
 
 ![Cookie Consent in Light and Dark mode](./docs/screenshot-consent.png)
 
+> <sub>Cookie Consent in Light and Dark mode</sub>
+
 ---
 
 ## Requirements
@@ -80,7 +82,7 @@ If your page layout requires a specific scheme, it can be enforced via a custom 
 
 ## Developer API
 
-This bundle exposes helper utilities to check cookie consent status programmatically — both in PHP/Symfony and in Twig templates.
+This bundle exposes helper utilities to check cookie consent status programmatically - both in PHP/Symfony and in Twig templates.
 
 ### PHP / Symfony
 
@@ -135,20 +137,20 @@ Three global Twig functions are available:
 
 ## Disclaimer
 
-### Cookie storage 🍪
+### Cookie storage
 
-This bundle manages cookie consent on behalf of your Contao installation. Any cookies set during the consent process belong to **your website** — no data is transmitted to or stored by us.
+This bundle manages cookie consent on behalf of your Contao installation. Any cookies set during the consent process belong to **your website** - no data is transmitted to or stored by us.
 
 The following cookies are set by this bundle:
 
-| Cookie             | Value                 | Purpose                                              |
-|--------------------|-----------------------|------------------------------------------------------|
-| `cc_cookies_saved` | `true` / `false`      | Stores whether the user has made a consent decision. |
-| `cc_cookies`       | List of tag group IDs | Stores which tag groups the user has accepted.       |
-
-### Legal stuff ⚖️
-
-We cannot guarantee complete legal compliance for your specific use case. Use this bundle at your own risk, or consult a lawyer if you are unsure about your configuration. We are happy to help with **technical questions**, but please understand that we cannot provide legal advice.
+| Cookie             | Value                 | Lifetime                        | Purpose                                              |
+|--------------------|-----------------------|---------------------------------|------------------------------------------------------|
+| `cc_cookies_saved` | `true`                | 7 days by default, configurable | Stores whether the user has made a consent decision. |
+| `cc_cookies`       | List of tag group IDs | 7 days by default, configurable | Stores which tag groups the user has accepted.       |
 
 #### Consent Logs
-This bundle does not maintain any server-side logs of individual user consent. As the extension does not require user accounts, it is technically impractical to link a consent decision to a specific individual or IP address. Instead, user consent—or rejection—is recorded exclusively via a cookie stored on the user’s device. This approach ensures that consent can be reliably verified for each user while avoiding the storage of personal data on the server, in line with GDPR principles of data minimization and privacy by design.
+This bundle does not maintain any server-side logs of individual user consent. As the extension does not require user accounts, it is technically impractical to link a consent decision to a specific individual or IP address. Instead, user consent - or rejection - is recorded exclusively via a cookie stored on the user’s device. This approach ensures that consent can be reliably verified for each user while avoiding the storage of personal data on the server, in line with GDPR principles of data minimization and privacy by design.
+
+### Legal stuff
+
+Please use this bundle at your own risk. Whether your specific setup is legally compliant is something we cannot assess - if you're uncertain, a lawyer is the right contact. For technical questions, though, we're happy to help.
