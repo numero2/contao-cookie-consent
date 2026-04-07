@@ -25,6 +25,7 @@ use Contao\StringUtil;
 use Doctrine\DBAL\Connection;
 use Exception;
 use numero2\CookieConsentBundle\TagModel;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -48,6 +49,11 @@ class TagListener {
     private Connection $connection;
 
     /**
+     * @var Symfony\Bundle\SecurityBundle\Security
+     */
+    private Security $security;
+
+    /**
      * @var Symfony\Contracts\Translation\TranslatorInterface
      */
     private TranslatorInterface $translator;
@@ -58,11 +64,12 @@ class TagListener {
     private array|null $labelsPageCache;
 
 
-    public function __construct( RequestStack $requestStack, ScopeMatcher $scopeMatcher, Connection $connection, TranslatorInterface $translator ) {
+    public function __construct( RequestStack $requestStack, ScopeMatcher $scopeMatcher, Connection $connection, Security $security, TranslatorInterface $translator ) {
 
         $this->requestStack = $requestStack;
         $this->scopeMatcher = $scopeMatcher;
         $this->connection = $connection;
+        $this->security = $security;
         $this->translator = $translator;
         $this->labelsPageCache = null;
     }
@@ -355,7 +362,7 @@ class TagListener {
      * Add our default data to this table, if this is fresh
      */
     #[AsCallback('tl_cc_tag', target: 'config.onload')]
-    public function addDefault() {
+    public function addDefaults() {
 
         $request = $this->requestStack->getCurrentRequest();
         if( !$request || $this->scopeMatcher->isFrontendRequest($request) ) {
@@ -367,50 +374,107 @@ class TagListener {
             "SELECT count(1) FROM $t"
         )->fetchOne();
 
+        $user = $this->security->getUser();
+
         $autoincrement = $this->connection->executeQuery(
             "SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME=:table LIMIT 1"
         ,   ['table'=>$t]
         )->fetchOne();
 
-        if( intval($count) || intval($autoincrement) > 1 ) {
-            return;
-        }
+        $defaultGroups = $GLOBALS['TL_LANG']['tl_cc_tag']['default'] ?? [];
 
-        $tag = new TagModel();
-        $tag->tstamp = time();
-        $tag->sorting = 32;
-        $tag->anonymize_ip = 1;
-        $tag->enable_on_cookie_accept = 1;
-        $tag->pid = 0;
-        $tag->type = 'group';
+        // create initial tag groups
+        if( !(intval($count) || intval($autoincrement) > 1) ) {
 
-        $defaultData = $GLOBALS['TL_LANG']['tl_cc_tag']['default'] ?? [];
+            $tag = new TagModel();
+            $tag->tstamp = time();
+            $tag->sorting = 32;
+            $tag->enable_on_cookie_accept = 1;
+            $tag->pid = 0;
+            $tag->type = 'group';
+            $tag->initial_language = $user->language;
 
-        if( is_array($defaultData) ) {
+            if( is_array($defaultGroups) ) {
 
-            foreach( $defaultData as $dataKey => $data ) {
+                foreach( $defaultGroups as $dataKey => $data ) {
 
-                $current = clone $tag;
+                    $current = clone $tag;
 
-                foreach( $data as $key => $value ) {
-                    $current->{$key} = $value;
+                    foreach( $data as $key => $value ) {
+                        $current->{$key} = $value;
+                    }
+
+                    $current->save();
+
+                    if( $dataKey == 0 ) {
+
+                        $sessionCookie = clone $tag;
+
+                        $sessionCookie->name = 'Session-Cookie';
+                        $sessionCookie->enable_on_cookie_accept = 0;
+                        $sessionCookie->pid = $current->id;
+                        $sessionCookie->type = 'session';
+
+                        $sessionCookie->save();
+                    }
+
+                    $tag->sorting *= 2;
                 }
 
-                $current->save();
+                self::addDefaults();
+            }
 
-                if( $dataKey == 0 ) {
+        // add missing translations for each default group
+        } else {
 
-                    $sessionCookie = clone $tag;
+            $rootPages = $this->getRootPages(true);
 
-                    $sessionCookie->name = 'Session-Cookie';
-                    $sessionCookie->enable_on_cookie_accept = 0;
-                    $sessionCookie->pid = $current->id;
-                    $sessionCookie->type = 'session';
+            $groups = $this->connection->executeQuery(
+                "SELECT id, name, initial_language FROM $t WHERE type=:type AND root=:root AND initial_language != ''"
+            ,   ['type'=>'group', 'root'=>0]
+            )->fetchAllAssociative();
 
-                    $sessionCookie->save();
+            if( is_array($groups) && is_array($defaultGroups) ) {
+
+                foreach( $rootPages as $rootId => $rootLanguage ) {
+
+                    $count = $this->connection->executeQuery(
+                        "SELECT count(1) FROM $t WHERE root=:root"
+                        ,   ['root'=>$rootId]
+                        )->fetchOne();
+
+                    // make sure we don't have any translations for this root already
+                    if( intval($count) > 0 ) {
+                        continue;
+                    }
+
+                    foreach( $groups as $i => $group ) {
+
+                        $translationIndex = array_search($group['name'], array_column($defaultGroups, 'name'));
+
+                        if( $translationIndex === false ) {
+                            continue;
+                        }
+
+                        $tag = new TagModel();
+                        $tag->tstamp = time();
+                        $tag->sorting = $i*32;
+                        $tag->pid = $group['id'];
+                        $tag->type = 'group';
+                        $tag->root = $rootId;
+
+                        $fallbackName = $this->translator->trans('tl_cc_tag.default.' . $translationIndex . '.name', [], 'contao_tl_cc_tag', 'en');
+                        $fallbackDescription = $this->translator->trans('tl_cc_tag.default.' . $translationIndex . '.description', [], 'contao_tl_cc_tag', 'en');
+
+                        $tag->name = $this->translator->trans('tl_cc_tag.default.' . $translationIndex . '.name', [], 'contao_tl_cc_tag', $rootLanguage);
+                        $tag->description = $this->translator->trans('tl_cc_tag.default.' . $translationIndex . '.description', [], 'contao_tl_cc_tag', $rootLanguage);
+
+                        // only save te translation if we're not falling back onto the english one (except for english roots)
+                        if( ($tag->name !== $fallbackName && $tag->description !== $fallbackDescription) || $rootLanguage == 'en' ) {
+                            $tag->save();
+                        }
+                    }
                 }
-
-                $tag->sorting *= 2;
             }
         }
     }
@@ -519,7 +583,7 @@ class TagListener {
      * @return array
      */
     #[AsCallback('tl_cc_tag', target: 'fields.pages_root.options')]
-    public function getRootPages(): array {
+    public function getRootPages( $langOnly=false ): array {
 
         $roots = [];
 
@@ -531,7 +595,14 @@ class TagListener {
 
         foreach( $rootPages as $page ) {
 
-            $roots[$page['id']] = $page['title'] . ' ('.$page['language'].')';
+            if( $langOnly ) {
+
+                $roots[$page['id']] = $page['language'];
+
+            } else {
+
+                $roots[$page['id']] = $page['title'] . ' ('.$page['language'].')';
+            }
         }
 
         return $roots;
@@ -620,3 +691,4 @@ class TagListener {
         }
     }
 }
+

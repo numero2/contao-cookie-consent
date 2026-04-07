@@ -18,6 +18,7 @@ services:
             - '@request_stack'
             - '@contao.routing.scope_matcher'
             - '@database_connection'
+            - '@security.helper'
             - '@translator'
 
     numero2_cookie_consent.listener.data_container.template_options:

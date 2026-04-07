@@ -186,6 +186,11 @@ class TagListener {
             return $buffer;
         }
 
+        // return original if referenced tag does not exist anymore
+        if( empty($tag) ) {
+            return $buffer;
+        }
+
         if( $model instanceof ContentModel ) {
 
             if( $this->isFieldInPalette('cssID', $GLOBALS['TL_DCA']['tl_content']['palettes'][$model->type] ?? '') ) {

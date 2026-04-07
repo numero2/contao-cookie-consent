@@ -163,5 +163,8 @@ $GLOBALS['TL_DCA']['tl_cc_tag'] = [
         ,   'eval'                  => ['tl_class'=>'w50']
         ,   'sql'                   => ['type'=>'boolean', 'default'=>true]
         ]
+    ,   'initial_language' => [
+            'sql'                   => ['type'=>'string', 'length'=>2, 'default'=>'']
+        ]
     ]
 ];

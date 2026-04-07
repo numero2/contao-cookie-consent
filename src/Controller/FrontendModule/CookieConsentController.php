@@ -78,6 +78,10 @@ class CookieConsentController extends AbstractFrontendModuleController {
         $oTags = TagModel::findBy(['type!=? AND active=?'], ['group', 1], ['order'=>'pid ASC, sorting ASC']);
         $oTagGroups = TagModel::findGroupsWithRootOverride($page->trail[0]);
 
+        if( !$oTags ) {
+            return new Response('');
+        }
+
         $tagGroups = [];
         foreach( $oTagGroups as $oGroup ) {
 
@@ -93,6 +97,7 @@ class CookieConsentController extends AbstractFrontendModuleController {
         }
 
         $tags = [];
+
         foreach( $oTags as $oTag ) {
 
             if( !array_key_exists($oTag->pid, $tagGroups) ) {
