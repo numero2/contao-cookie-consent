@@ -3,34 +3,53 @@
 {% block styles %}
 
     dialog {
+
         all: unset;
         display: block;
         background: var(--cc-bg);
         border: 1px solid var(--cc-border);
         border-radius: var(--cc-radius);
         padding: 1.25rem 1.5rem;
-    }
 
-    dialog[open] {
-        display: block;
-    }
-
-    p {
-        margin: 0 0 1rem;
         font-family: var(--cc-font);
         font-size: .875rem;
         line-height: 1.6;
         color: var(--cc-text-muted);
+
+        p:nth-child(1) strong {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            color: var(--cc-text);
+            display: block;
+            font-family: var(--cc-font-heading);
+            letter-spacing: -.01em;
+        }
+
+        > * {
+            margin: unset;
+
+            & + * {
+                margin-top: 1em;
+            }
+        }
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+
+            &:hover, &:focus {
+                color: var(--cc-accent-hover);
+            }
+        }
+
+        ul, ol {
+            padding-inline-start: 1.5em;
+        }
     }
 
-    p:nth-child(1) strong {
-        font-size: 1.0625rem;
-        font-weight: 700;
-        color: var(--cc-text);
+    dialog[open] {
         display: block;
-        margin-bottom: .25rem;
-        font-family: var(--cc-font-heading);
-        letter-spacing: -.01em;
     }
 
     .btn {

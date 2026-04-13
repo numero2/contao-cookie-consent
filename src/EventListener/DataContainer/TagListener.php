@@ -427,7 +427,7 @@ class TagListener {
         // add missing translations for each default group
         } else {
 
-            $rootPages = $this->getRootPages(true);
+            $rootPages = $this->getRootPages(null, true);
 
             $groups = $this->connection->executeQuery(
                 "SELECT id, name, initial_language FROM $t WHERE type=:type AND root=:root AND initial_language != ''"
@@ -583,7 +583,7 @@ class TagListener {
      * @return array
      */
     #[AsCallback('tl_cc_tag', target: 'fields.pages_root.options')]
-    public function getRootPages( $langOnly=false ): array {
+    public function getRootPages( $dc=null, bool $langOnly=false ): array {
 
         $roots = [];
 

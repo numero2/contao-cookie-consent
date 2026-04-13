@@ -47,9 +47,11 @@ To force a specific color scheme set "color-scheme" to "light" or "dark". #}
     %}
 
     {% block shadow_button %}
+    <p>
         <a{{ shadow_button_attributes|default }}>
             <span>{{ 'MSC.cookie_consent.optin_fallback.button_label'|trans }}</span>
         </a>
+    </p>
     {% endblock %}
 
 {% endblock %}

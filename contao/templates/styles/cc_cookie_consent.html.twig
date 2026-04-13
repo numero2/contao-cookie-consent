@@ -115,7 +115,7 @@ form {
         color: var(--cc-accent);
         text-underline-offset: 2px;
 
-        &:hover {
+        &:hover, &:focus {
             color: var(--cc-accent-hover);
         }
     }
@@ -182,12 +182,31 @@ form {
         padding: .75rem 1rem;
         border-top: 1px solid var(--cc-border);
 
-        p {
-            margin: 0;
-            font-size: 0.75rem;
-            font-family: var(--cc-font);
-            line-height: 1.55;
-            color: var(--cc-text-muted);
+        font-size: 0.75rem;
+        font-family: var(--cc-font);
+        line-height: 1.55;
+        color: var(--cc-text-muted);
+
+        > * {
+            margin: unset;
+
+            & + * {
+                margin-top: 1em;
+            }
+        }
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+
+            &:hover, &:focus {
+                color: var(--cc-accent-hover);
+            }
+        }
+
+        ul, ol {
+            padding-inline-start: 1.5em;
         }
     }
 }
