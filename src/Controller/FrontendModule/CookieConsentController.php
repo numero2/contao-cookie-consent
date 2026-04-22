@@ -71,8 +71,8 @@ class CookieConsentController extends AbstractFrontendModuleController {
         Controller::loadDataContainer(TagModel::getTable());
 
         $accepted = [];
-        if( !empty($request->cookies->has('cc_cookies')) ) {
-            $accepted = explode('-', $request->cookies->get('cc_cookies'));
+        if( $request->headers->get('contao-cookie-consent') !== null ) {
+            $accepted = explode('-', $request->headers->get('contao-cookie-consent'));
         }
 
         $oTags = TagModel::findBy(['type!=? AND active=?'], ['group', 1], ['order'=>'pid ASC, sorting ASC']);
@@ -160,6 +160,11 @@ class CookieConsentController extends AbstractFrontendModuleController {
         $template->set('cc_accept_label', $model->cc_accept_label);
         $template->set('cc_accept_all_label', $model->cc_accept_all_label);
 
+        $this->tagResponse([
+            'contao.db.tl_cc_tag'
+        ,   ...array_map(static fn ($id): string => 'contao.db.tl_cc_tag.'.$id, array_keys($tagGroups))
+        ]);
+
         return $template->getResponse();
     }
 
@@ -235,18 +240,6 @@ class CookieConsentController extends AbstractFrontendModuleController {
                 'lax' // sameSite
             ));
 
-            $response->headers->setCookie(new Cookie(
-                'cc_cookies_saved',
-                "true",
-                $iCookieExpires,
-                '/',
-                $sDomain,
-                true, // secure
-                true, // httpOnly
-                false, // raw
-                'lax' // sameSite
-            ));
-
             throw new ResponseException($response);
         }
     }
@@ -276,11 +269,6 @@ class CookieConsentController extends AbstractFrontendModuleController {
             return false;
         }
 
-        // never show on pages that should be cached
-        if( $page->includeCache ) {
-            return false;
-        }
-
         // check if cookie consent is excluded from current page
         if( !empty($model->cc_exclude_pages) ) {
 
@@ -293,7 +281,7 @@ class CookieConsentController extends AbstractFrontendModuleController {
         }
 
         // check if cookies not already set
-        if( $request->cookies->get('cc_cookies_saved') === "true" ) {
+        if( $request->headers->get('contao-cookie-consent') !== null ) {
             return false;
         }
 

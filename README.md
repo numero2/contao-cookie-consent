@@ -133,22 +133,31 @@ Three global Twig functions are available:
 {{ cc_consent_force_link('customCSSId') }}
 ```
 
+### HTTP-Cache
+
+Should work as expected for other Contao entities such as content elements, modules, articles, pages, etc.
+This means that whenever a tag or tag group is created, edited, or deleted, the corresponding cache entries will be invalidated.
+
+However, be aware that we do not support cache invalidation based on function usage, e.g. `$this->cookieConsentUtil->isTagAccepted(<id>)`, or in Twig `{% if cc_tag_not_accepted(<id>) %}`.
+Also, the insert tag `{{ifoptin::<id>}}` can only affect the rendered markup based on the tag configuration itself.
+
 ---
 
 ## Disclaimer
 
 ### Cookie storage
 
-This bundle manages cookie consent on behalf of your Contao installation. Any cookies set during the consent process belong to **your website** - no data is transmitted to or stored by us.
+This bundle manages cookie consent on behalf of your Contao installation.
+Any cookies set during the consent process belong to **your website** - no data is transmitted to or stored by us.
 
 The following cookies are set by this bundle:
 
-| Cookie             | Value                 | Lifetime                        | Purpose                                              |
-|--------------------|-----------------------|---------------------------------|------------------------------------------------------|
-| `cc_cookies_saved` | `true`                | 7 days by default, configurable | Stores whether the user has made a consent decision. |
-| `cc_cookies`       | List of tag group IDs | 7 days by default, configurable | Stores which tag groups the user has accepted.       |
+| Cookie             | Value                 | Lifetime                        | Purpose                                                  |
+|--------------------|-----------------------|---------------------------------|----------------------------------------------------------|
+| `cc_cookies`       | List of tag group IDs | 7 days by default, configurable | Stores which tag groups the user has accepted (if any).  |
 
 #### Consent Logs
+
 This bundle does not maintain any server-side logs of individual user consent. As the extension does not require user accounts, it is technically impractical to link a consent decision to a specific individual or IP address. Instead, user consent - or rejection - is recorded exclusively via a cookie stored on the user’s device. This approach ensures that consent can be reliably verified for each user while avoiding the storage of personal data on the server, in line with GDPR principles of data minimization and privacy by design.
 
 ### Legal stuff

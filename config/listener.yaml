@@ -54,6 +54,7 @@ services:
             - '@request_stack'
             - '@contao.routing.scope_matcher'
             - '@contao.routing.response_context_accessor'
+            - '@contao.cache.tag_manager'
             - '@numero2_cookie_consent.util.cookie_consent'
 
 
@@ -63,3 +64,8 @@ services:
             - '@contao.routing.scope_matcher'
         tags:
             - kernel.event_subscriber
+
+    numero2_cookie_consent.listener.kernel_response.cookie_consent_header:
+        class: numero2\CookieConsentBundle\EventListener\KernelResponse\CookieConsentHeaderListener
+        arguments:
+            - '@contao.routing.scope_matcher'
