@@ -5,6 +5,8 @@
 
 {% set searchable = false %}
 
+{% block wrapper_tag %}cc-cookie-optin{% endblock %}
+
 {# By default the color scheme of the consent dialog is defined by the users system settings.
 To force a specific color scheme set "color-scheme" to "light" or "dark". #}
 {% block inner %}
@@ -13,19 +15,16 @@ To force a specific color scheme set "color-scheme" to "light" or "dark". #}
     <!-- cc-optin tag {{ cc_tag }}-->
     {% endif %}
 
-    <cc-cookie-optin>
+    <template shadowrootmode="open">
 
-        <template shadowrootmode="open">
+        {{ block('shadow_styles') }}
 
-            {{ block('shadow_styles') }}
+        <dialog open part="dialog">
+            {{ block('shadow_content') }}
+        </dialog>
 
-            <dialog open part="dialog">
-                {{ block('shadow_content') }}
-            </dialog>
+    </template>
 
-        </template>
-
-    </cc-cookie-optin>
 {% endblock %}
 
 

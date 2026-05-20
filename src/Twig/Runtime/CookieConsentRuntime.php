@@ -47,5 +47,8 @@ final class CookieConsentRuntime implements RuntimeExtensionInterface {
         return $this->cookieConsentUtil->generateConsentForceLink($id);
     }
 
+    public function renderTagFallback( string|int $tagId ): string {
 
+        return $this->cookieConsentUtil->renderTagFallback($tagId);
+    }
 }

@@ -129,6 +129,9 @@ Three global Twig functions are available:
     <p>Please enable Analytics to see this content.</p>
 {% endif %}
 
+{# Render a fallback optin dialog for the given tag #}
+{{ cc_tag_fallback(6) }}
+
 {# Render a link that opens the consent dialog (optional: custom CSS ID) #}
 {{ cc_consent_force_link('customCSSId') }}
 ```

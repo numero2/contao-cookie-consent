@@ -32,6 +32,11 @@ final class CookieConsentExtension extends AbstractExtension {
                 [CookieConsentRuntime::class, 'isTagNotAccepted'],
             ),
             new TwigFunction(
+                'cc_tag_fallback',
+                [CookieConsentRuntime::class, 'renderTagFallback'],
+                ['is_safe' => ['html']],
+            ),
+            new TwigFunction(
                 'cc_consent_force_link',
                 [CookieConsentRuntime::class, 'generateConsentForceLink'],
             ),

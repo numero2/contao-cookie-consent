@@ -12,6 +12,7 @@
 
 namespace numero2\CookieConsentBundle\Util;
 
+use Contao\FragmentTemplate;
 use Contao\PageModel;
 use Contao\StringUtil;
 use Doctrine\DBAL\ArrayParameterType;
@@ -259,5 +260,31 @@ class CookieConsentUtil {
         }
 
         return $href;
+    }
+
+
+    /**
+     * Renders a fallback optin dialog for the tag with the given id
+     *
+     * @param string|int $tagId
+     *
+     * @return string
+     */
+    public function renderTagFallback( string|int $tagId, string $template='' ): string {
+
+        $tag = [];
+
+        // call to fill tag array with data
+        $this->isTagAccepted($tagId, true, $tag);
+
+        $template = new FragmentTemplate($template?:'content_element/cc_optin');
+
+        $template->fallback_text = $tag['fallback_text'];
+        $template->element_html_id = '';
+        $template->element_css_classes = 'cc-default-fallback';
+        $template->type = 'optin';
+        $template->cc_tag = $tagId;
+
+        return $template->parse();
     }
 }
