@@ -206,6 +206,9 @@ class CookieConsentController extends AbstractFrontendModuleController {
                     }
                 }
             }
+            if( empty($accepted) ) {
+                $accepted[] = 0;
+            }
 
             $iCookieExpires = strtotime('+7 days');
 
