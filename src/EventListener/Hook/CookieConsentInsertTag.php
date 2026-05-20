@@ -16,7 +16,6 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsInsertTag;
 use Contao\CoreBundle\InsertTag\InsertTagResult;
 use Contao\CoreBundle\InsertTag\ResolvedInsertTag;
 use Contao\CoreBundle\InsertTag\Resolver\InsertTagResolverNestedResolvedInterface;
-use Contao\Message;
 use numero2\CookieConsentBundle\Util\CookieConsentUtil;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;

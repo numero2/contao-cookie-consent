@@ -82,8 +82,8 @@ class CookieConsentUtil {
             return false;
         }
 
-        if( $request->cookies->get('cc_cookies_saved') === "true" ) {
-            return in_array($tag['pid'], explode('-', $request->cookies->get('cc_cookies')) ?? '');
+        if( $request->headers->get('contao-cookie-consent') !== null ) {
+            return in_array($tag['pid'], explode('-', $request->headers->get('contao-cookie-consent')));
         }
 
         return false;
@@ -151,11 +151,6 @@ class CookieConsentUtil {
 
                 // skip on not enough data
                 if( empty($tag->pages) || empty($allowed[$tag->pages_scope]) ) {
-                    continue;
-                }
-
-                // skip if we're on a page that should be cached
-                if( $pageModel->includeCache && $tag->enable_on_cookie_accept ) {
                     continue;
                 }
 

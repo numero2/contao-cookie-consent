@@ -13,6 +13,7 @@
 namespace numero2\CookieConsentBundle\EventListener\Hook;
 
 use Contao\ContentModel;
+use Contao\CoreBundle\Cache\CacheTagManager;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\CoreBundle\Event\LayoutEvent;
 use Contao\CoreBundle\Routing\ResponseContext\HtmlHeadBag\HtmlHeadBag;
@@ -49,16 +50,22 @@ class TagListener {
     private ResponseContextAccessor $responseContextAccessor;
 
     /**
+     * @var Contao\CoreBundle\Cache\CacheTagManager
+     */
+    private CacheTagManager $cacheTagManager;
+
+    /**
      * @var numero2\CookieConsentBundle\Util\CookieConsentUtil
      */
     private CookieConsentUtil $cookieConsentUtil;
 
 
-    public function __construct( RequestStack $requestStack, ScopeMatcher $scopeMatcher, ResponseContextAccessor $responseContextAccessor, CookieConsentUtil $cookieConsentUtil ) {
+    public function __construct( RequestStack $requestStack, ScopeMatcher $scopeMatcher, ResponseContextAccessor $responseContextAccessor, CacheTagManager $cacheTagManager, CookieConsentUtil $cookieConsentUtil ) {
 
         $this->requestStack = $requestStack;
         $this->scopeMatcher = $scopeMatcher;
         $this->responseContextAccessor = $responseContextAccessor;
+        $this->cacheTagManager = $cacheTagManager;
         $this->cookieConsentUtil = $cookieConsentUtil;
     }
 
@@ -96,13 +103,18 @@ class TagListener {
 
         $tagsRendered = [];
         $tagGroups = $this->cookieConsentUtil->getAllowedTags();
+        $ids = [];
 
         if( $tagGroups && count($tagGroups) ) {
 
             // render script tags
             foreach( $tagGroups as $pid => $tags ) {
 
+                $ids[] = $pid;
+
                 foreach( $tags as $key => $tag ) {
+
+                    $ids[] = $tag['id'];
 
                     if( in_array($tag['type'], ['session', 'content_module_element']) ) {
                         continue;
@@ -126,6 +138,10 @@ class TagListener {
                 $htmlHeadBag = $this->responseContextAccessor->getResponseContext()->get(HtmlHeadBag::class);
                 $htmlHeadBag->setMetaRobots('noindex,nofollow');
             }
+        }
+
+        if( !empty($ids) ) {
+            $this->cacheTagManager->tagWith(array_map(static fn ($id): string => 'contao.db.tl_cc_tag.'.$id, $ids));
         }
 
         $template = new FragmentTemplate('frontend_module/cc_tags');
@@ -183,6 +199,7 @@ class TagListener {
         $tag = [];
         // only replace buffer if cc_tag_visibility is set and selected tag is not accepted
         if( empty($model->cc_tag_visibility) || $this->cookieConsentUtil->isTagAccepted($model->cc_tag, true, $tag) ) {
+            $this->cacheTagManager->tagWith('contao.db.tl_cc_tag.'.$model->cc_tag);
             return $buffer;
         }
 
@@ -218,6 +235,8 @@ class TagListener {
         if( empty($template->fallback_text) ) {
             $template->element_css_classes .= ' cc-default-fallback';
         }
+
+        $this->cacheTagManager->tagWith('contao.db.tl_cc_tag.'.$tag['id']);
 
         return $template->parse();
     }

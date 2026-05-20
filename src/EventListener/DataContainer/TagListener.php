@@ -644,10 +644,8 @@ class TagListener {
             }
         }
 
-
         // either switch to entry based on selected root or copy current and redirect there
         if( Input::post('SUBMIT_TYPE') == 'auto' ) {
-
 
             $id = Input::get('id');
             $rootId = Input::post('root');
