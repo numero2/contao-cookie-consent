@@ -26,6 +26,11 @@ class MessagesListener {
      */
     private Connection $connection;
 
+    /**
+     * @var Symfony\Contracts\Translation\TranslatorInterface
+     */
+    private TranslatorInterface $translator;
+
 
     public function __construct( Connection $connection, TranslatorInterface $translator ) {
 
@@ -44,7 +49,6 @@ class MessagesListener {
         if( $result->rowCount() > 0 ) {
             return '<p class="tl_error">' . $this->translator->trans('ERR.cookie_consent.cms_optinlink_deprecation', [], 'contao_default') . '</p>';
         }
-
 
         return '';
     }
