@@ -144,7 +144,12 @@ class ModuleListener {
 
         // execute previous child record callbacks
         if( count($labelConfig['label_callback']) > 2 ) {
+
             $labels = System::importStatic($labelConfig['label_callback'][2])->{$labelConfig['label_callback'][3]}($arrRow, $label, $dc, $labels);
+
+            if( !is_array($labels) ) {
+                $labels = [$labels];
+            }
         }
 
         if( $arrRow['type'] === 'module' ) {
