@@ -147,7 +147,13 @@ class CookieConsentController extends AbstractFrontendModuleController {
             // check if group should be shown based on configured pages
             if( !empty($tagGroup['tagPages']) ) {
                 $tagGroup['show'] = true;
+            } else {
+                unset($tagGroups[$id]);
             }
+        }
+
+        if( !$tagGroups ) {
+            return new Response('');
         }
 
         $template->set('action', $actionHref);
@@ -230,14 +236,15 @@ class CookieConsentController extends AbstractFrontendModuleController {
 
             $response = new RedirectResponse($href);
 
-            // store decision in cookie with secure flag and SameSite=Lax
+            // store decision in cookie with SameSite=Lax, only flag it secure on https
+            // as browsers would discard a secure cookie sent over plain http
             $response->headers->setCookie(new Cookie(
                 'cc_cookies',
                 implode('-', $accepted),
                 $iCookieExpires,
                 '/',
                 $sDomain,
-                true, // secure
+                $request->isSecure(), // secure
                 true, // httpOnly
                 false, // raw
                 'lax' // sameSite
