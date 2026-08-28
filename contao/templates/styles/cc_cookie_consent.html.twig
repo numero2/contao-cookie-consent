@@ -44,9 +44,8 @@ dialog {
 .backdrop {
 	position: fixed;
 	inset: 0;
-	background: rgba(0, 0, 0, .45);
-	backdrop-filter: blur(3px);
-	-webkit-backdrop-filter: blur(3px);
+	background: var(--cc-backdrop-color);
+	backdrop-filter: var(--cc-backdrop-filter);
 	animation: cc-fade var(--cc-speed) ease forwards;
 }
 
@@ -357,7 +356,6 @@ form {
     &.loading {
         --text: var(--cc-text);
         color: rgba(0,0,0,0);
-        background: url(var(--cc-loading)) no-repeat scroll 50% 50%;
     }
 }
 
@@ -407,8 +405,8 @@ form {
 		animation: cc-fade .1s linear forwards;
 	}
 
-	.toggle__thumb,
-	.toggle__track,
+	.toggle .thumb,
+	.toggle .track,
 	.btn {
 		transition: none;
 	}
