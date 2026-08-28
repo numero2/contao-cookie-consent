@@ -31,7 +31,7 @@
         <source>Always active</source>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.copyright">
-        <source><![CDATA[Cookie Consent provided by <a href="https://www.numero2.de/" title="Top Contao Agency in Germany" target="_blank">numero2</a>]]></source>
+        <source><![CDATA[Cookie Consent provided by <a href="https://www.numero2.de/?utm_source=cookie_consent" title="Top Contao Agency in Germany" target="_blank">numero2</a>]]></source>
     </trans-unit>
     <trans-unit id="MSC.cookie_consent.backend.element_optin">
         <source>Only visible with opt-in for tag ID: %s</source>
