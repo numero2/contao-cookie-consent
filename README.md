@@ -85,13 +85,16 @@ Override it in your installation to change custom properties or add CSS that app
 {% endblock %}
 
 {# Shared rules #}
-{% block base_styles %}
+{% block custom_styles %}
     .btn {
         border-radius: calc(var(--cc-radius) * .5);
         font-weight: 500;
     }
 {% endblock %}
 ```
+
+`custom_styles` is rendered *after* the CSS of the individual dialogs, so its rules win over the
+defaults of the bundle without needing `!important`.
 
 > Do not use `{% block styles %}` here - that block is reserved for the individual dialogs
 > (`styles/cc_cookie_consent.html.twig` and `styles/cc_cookie_optin.html.twig`) and would be
