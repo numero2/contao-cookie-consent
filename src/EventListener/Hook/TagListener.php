@@ -29,9 +29,32 @@ use Contao\StringUtil;
 use numero2\CookieConsentBundle\Util\CookieConsentUtil;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
+use Symfony\Component\HttpKernel\KernelEvents;
 
 
 class TagListener {
+
+
+    /**
+     * Globals an element may contribute to while it is being rendered.
+     * TL_HEAD, TL_BODY and TL_STYLE_SHEETS are the targets of Twig's
+     * {% add ... to head|body|stylesheets %}, the rest is the classic
+     * asset registration.
+     */
+    private const DOCUMENT_GLOBALS = [
+        'TL_HEAD', 'TL_BODY', 'TL_STYLE_SHEETS',
+        'TL_CSS', 'TL_JAVASCRIPT', 'TL_JQUERY', 'TL_MOOTOOLS',
+        'TL_USER_CSS', 'TL_FRAMEWORK_CSS',
+    ];
+
+
+    /**
+     * LIFO stack of [key, snapshot] pairs
+     *
+     * @var array<int, array{0: string, 1: array<string, array|null>}>
+     */
+    private array $documentSnapshots = [];
 
 
     /**
@@ -67,6 +90,23 @@ class TagListener {
         $this->responseContextAccessor = $responseContextAccessor;
         $this->cacheTagManager = $cacheTagManager;
         $this->cookieConsentUtil = $cookieConsentUtil;
+    }
+
+
+    /**
+     * Resets any leftover snapshots, as this listener is a shared service
+     * and may be reused in a long running worker
+     *
+     * @param Symfony\Component\HttpKernel\Event\RequestEvent $event
+     */
+    #[AsEventListener(event: KernelEvents::REQUEST)]
+    public function onKernelRequest( RequestEvent $event ): void {
+
+        if( !$event->isMainRequest() ) {
+            return;
+        }
+
+        $this->documentSnapshots = [];
     }
 
 
@@ -153,6 +193,50 @@ class TagListener {
 
 
     /**
+     * Takes a snapshot of everything an element may add to the document before
+     * it is rendered. The getContentElement / getFrontendModule hooks only run
+     * after generate(), so by then a template's {% add ... to head %} has
+     * already been registered - replacing the buffer alone would leave the
+     * external script in the head without any consent.
+     *
+     * @param Contao\Model $model
+     * @param bool $isVisible
+     *
+     * @return bool
+     */
+    #[AsHook('isVisibleElement')]
+    public function snapshotDocumentContent( Model $model, bool $isVisible ): bool {
+
+        if( !$isVisible ) {
+            return $isVisible;
+        }
+
+        if( !($model instanceof ContentModel || $model instanceof ModuleModel) ) {
+            return $isVisible;
+        }
+
+        if( empty($model->cc_tag_visibility) ) {
+            return $isVisible;
+        }
+
+        $request = $this->requestStack->getCurrentRequest();
+
+        if( !$request || !$this->scopeMatcher->isFrontendRequest($request) ) {
+            return $isVisible;
+        }
+
+        $snapshot = [];
+        foreach( self::DOCUMENT_GLOBALS as $key ) {
+            $snapshot[$key] = $GLOBALS[$key] ?? null;
+        }
+
+        $this->documentSnapshots[] = [$this->getSnapshotKey($model), $snapshot];
+
+        return $isVisible;
+    }
+
+
+    /**
      * Replace a rendered content element or frontend module with a fallback
      * template if configured to be only visible on cookie accept
      *
@@ -175,6 +259,10 @@ class TagListener {
         if( !$request || !$this->scopeMatcher->isFrontendRequest($request) ) {
             return $buffer;
         }
+
+        // pop before the alias/module indirection below overwrites $model, so
+        // the stack is cleared on every path through this method
+        $snapshot = $this->popDocumentSnapshot($model);
 
         $cssClass = '';
 
@@ -208,6 +296,14 @@ class TagListener {
             return $buffer;
         }
 
+        // we are about to discard the element's markup, so also discard
+        // everything it added to head, body and assets while rendering. Must
+        // happen before the fallback template is parsed, as that one adds its
+        // own script to the body.
+        if( $snapshot !== null ) {
+            $this->restoreDocumentContent($snapshot);
+        }
+
         if( $model instanceof ContentModel ) {
 
             if( $this->isFieldInPalette('cssID', $GLOBALS['TL_DCA']['tl_content']['palettes'][$model->type] ?? '') ) {
@@ -239,6 +335,70 @@ class TagListener {
         $this->cacheTagManager->tagWith('contao.db.tl_cc_tag.'.$tag['id']);
 
         return $template->parse();
+    }
+
+
+    /**
+     * Builds the key a snapshot is stored under. Object identity is of no use
+     * here, since Contao may hand a cloneDetached() copy of the model to the
+     * getContentElement hook.
+     *
+     * @param Contao\Model $model
+     *
+     * @return string
+     */
+    private function getSnapshotKey( Model $model ): string {
+
+        return $model::class . ':' . ($model->id ?: '') . ':' . ($model->type ?: '');
+    }
+
+
+    /**
+     * Returns and removes the snapshot taken for the given model, or null if
+     * there is none. Any entry above the match is dropped as well: those either
+     * belong to the element's own subtree or are unbalanced, as isVisibleElement
+     * also fires for elements Contao bails out on before rendering them.
+     *
+     * @param Contao\Model $model
+     *
+     * @return array|null
+     */
+    private function popDocumentSnapshot( Model $model ): ?array {
+
+        $key = $this->getSnapshotKey($model);
+
+        for( $i = count($this->documentSnapshots) - 1; $i >= 0; $i-- ) {
+
+            if( $this->documentSnapshots[$i][0] !== $key ) {
+                continue;
+            }
+
+            $snapshot = $this->documentSnapshots[$i][1];
+
+            array_splice($this->documentSnapshots, $i);
+
+            return $snapshot;
+        }
+
+        return null;
+    }
+
+
+    /**
+     * Restores the given snapshot of the document globals
+     *
+     * @param array $snapshot
+     */
+    private function restoreDocumentContent( array $snapshot ): void {
+
+        foreach( $snapshot as $key => $value ) {
+
+            if( $value === null ) {
+                unset($GLOBALS[$key]);
+            } else {
+                $GLOBALS[$key] = $value;
+            }
+        }
     }
 
 
