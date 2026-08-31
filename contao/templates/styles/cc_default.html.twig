@@ -1,5 +1,6 @@
 <style>
 
+{% block variables %}
 :host {
 	--cc-bg: #ffffff;
 	--cc-surface: #f8f7f4;
@@ -43,6 +44,10 @@
         --cc-shadow: 0 8px 40px rgba(0, 0, 0, .4), 0 2px 8px rgba(0, 0, 0, .2);
     }
 }
+{% endblock %}
+
+{% block base_styles %}
+{% endblock %}
 
 {% block styles %}
 {% endblock %}

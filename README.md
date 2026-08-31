@@ -65,6 +65,55 @@ cc-cookie-consent, cc-cookie-optin {
 
 > A full list of available CSS custom properties can be found in [contao/templates/styles/cc_default.html.twig](contao/templates/styles/cc_default.html.twig).
 
+### Customizing both dialogs at once
+
+The consent dialog and the opt-in fallback share the base template `styles/cc_default.html.twig`.
+Override it in your installation to change custom properties or add CSS that applies to **both** of them:
+
+```twig
+{# templates/styles/cc_default.html.twig #}
+{% extends '@Contao/styles/cc_default.html.twig' %}
+
+{# CSS custom properties #}
+{% block variables %}
+    {{ parent() }}
+
+    :host {
+        --cc-accent: #f47c00;
+        --cc-radius: 4px;
+    }
+{% endblock %}
+
+{# Shared rules #}
+{% block base_styles %}
+    .btn {
+        border-radius: calc(var(--cc-radius) * .5);
+        font-weight: 500;
+    }
+{% endblock %}
+```
+
+> Do not use `{% block styles %}` here - that block is reserved for the individual dialogs
+> (`styles/cc_cookie_consent.html.twig` and `styles/cc_cookie_optin.html.twig`) and would be
+> overwritten by them.
+
+### Customizing a single dialog
+
+To style only one of the two, override the corresponding template and keep the defaults via `parent()`:
+
+```twig
+{# templates/styles/cc_cookie_optin.html.twig #}
+{% extends '@Contao/styles/cc_cookie_optin.html.twig' %}
+
+{% block styles %}
+    {{ parent() }}
+
+    dialog {
+        text-align: center;
+    }
+{% endblock %}
+```
+
 ### Color scheme
 
 By default, both elements follow the color scheme defined by the user's operating system or browser.
