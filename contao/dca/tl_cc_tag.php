@@ -86,7 +86,7 @@ $GLOBALS['TL_DCA']['tl_cc_tag'] = [
         ,   'filter'                => true
         ,   'reference'             => &$GLOBALS['TL_LANG']['tl_cc_tag']['types']
         ,   'eval'                  => ['mandatory'=>true, 'maxlength'=>64, 'chosen'=>true, 'submitOnChange'=>true, 'tl_class'=>'w50']
-        ,   'sql'                   => ['name'=>'type', 'type'=>'string', 'length'=>64, 'default'=>'', 'customSchemaOptions'=>['collation'=>'ascii_bin']]
+        ,   'sql'                   => ['name'=>'type', 'type'=>'string', 'length'=>64, 'default'=>'', 'platformOptions'=>['collation'=>'ascii_bin']]
 
         ]
     ,   'name' => [
@@ -115,7 +115,7 @@ $GLOBALS['TL_DCA']['tl_cc_tag'] = [
         ,   'options'               => ['head', 'body']
         ,   'reference'             => &$GLOBALS['TL_LANG']['tl_cc_tag']['sections']
         ,   'eval'                  => ['mandatory'=>true, 'includeBlankOption'=>true, 'tl_class'=>'clr w50']
-        ,   'sql'                   => ['name'=>'section', 'type'=>'string', 'length'=>16, 'default'=>'body', 'customSchemaOptions'=>['collation'=>'ascii_bin']]
+        ,   'sql'                   => ['name'=>'section', 'type'=>'string', 'length'=>16, 'default'=>'body', 'platformOptions'=>['collation'=>'ascii_bin']]
         ]
     ,   'fallbackTpl' => [
             'inputType'             => 'select'

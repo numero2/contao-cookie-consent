@@ -10,14 +10,14 @@
         }
     ],
     "require": {
-        "contao/core-bundle": "^5.7",
+        "contao/core-bundle": "^5.7 || ^6.0",
         "jeremykendall/php-domain-parser": "^6.4",
         "doctrine/dbal": "^3.7 || ^4.3",
-        "symfony/config": "^7.4",
-        "symfony/dependency-injection": "^7.4",
-        "symfony/event-dispatcher": "^7.4",
-        "symfony/http-foundation": "^7.4",
-        "symfony/http-kernel": "^7.4",
+        "symfony/config": "^7.4 || ^8.0",
+        "symfony/dependency-injection": "^7.4 || ^8.0",
+        "symfony/event-dispatcher": "^7.4 || ^8.0",
+        "symfony/http-foundation": "^7.4 || ^8.0",
+        "symfony/http-kernel": "^7.4 || ^8.0",
         "symfony/translation-contracts": "^3.0",
         "twig/twig": "^3.21"
     },

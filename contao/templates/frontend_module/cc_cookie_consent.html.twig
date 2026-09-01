@@ -64,7 +64,7 @@
                 {% if group.description|default('')|length %}
                     {% block shadow_cat_body %}
                     <div class="body" part="category-body">
-                        {{ group.description|insert_tag_raw|raw }}
+                        {{ group.description|sanitize_html('contao')|insert_tag_raw }}
                     </div>
                     {% endblock %}
                 {% endif %}

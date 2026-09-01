@@ -13,6 +13,7 @@
 namespace numero2\CookieConsentBundle\EventListener\DataContainer;
 
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
+use Contao\CoreBundle\DataContainer\RecordLabel;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\CoreBundle\Routing\ScopeMatcher;
 use Contao\DataContainer;
@@ -135,9 +136,9 @@ class ModuleListener {
      * @param Contao\DataContainer $dc
      * @param array $labels
      *
-     * @return array
+     * @return array|RecordLabel
      */
-    public function appendTagVisibilityToTypeLabel( array $arrRow, string $label, DataContainer $dc, array $labels ): array {
+    public function appendTagVisibilityToTypeLabel( array $arrRow, string $label, DataContainer $dc, array $labels ): array|RecordLabel {
 
         $t = $dc->table;
         $labelConfig = &$GLOBALS['TL_DCA'][$t]['list']['label'];
@@ -147,7 +148,7 @@ class ModuleListener {
 
             $labels = System::importStatic($labelConfig['label_callback'][2])->{$labelConfig['label_callback'][3]}($arrRow, $label, $dc, $labels);
 
-            if( !is_array($labels) ) {
+            if( !is_array($labels) && !($labels instanceof RecordLabel) ) {
                 $labels = [$labels];
             }
         }
@@ -163,10 +164,21 @@ class ModuleListener {
 
         if( $labels && $arrRow['cc_tag_visibility'] ) {
 
-            $labels[0] .= sprintf(
-                '<span class="tl_gray cc_optin">%s</span>'
-            ,   $this->translator->trans('MSC.cookie_consent.backend.element_optin', [$arrRow['cc_tag']], 'contao_default')
-            );
+            if( is_array($labels) ) {
+
+                $labels[0] .= sprintf(
+                    '<span class="tl_gray cc_optin">%s</span>'
+                ,   $this->translator->trans('MSC.cookie_consent.backend.element_optin', [$arrRow['cc_tag']], 'contao_default')
+                );
+
+            // RecordLabel return by Contao ^6.0
+            } else if( $labels instanceof RecordLabel ) {
+
+                $labels = RecordLabel::fromHtml($labels->htmlLabel . sprintf(
+                    '<span class="tl_gray cc_optin">%s</span>'
+                ,   $this->translator->trans('MSC.cookie_consent.backend.element_optin', [$arrRow['cc_tag']], 'contao_default')
+                ));
+            }
         }
 
         return $labels;

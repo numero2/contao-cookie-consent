@@ -12,9 +12,9 @@
 
 namespace numero2\CookieConsentBundle\EventListener\KernelResponse;
 
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
 
 #[AsEventListener(event: KernelEvents::RESPONSE)]

@@ -1,5 +1,5 @@
 {% extends '@Contao/cc_tag/_base.html.twig' %}
 
 {% block tag %}
-    {{ tag.html|insert_tag_raw|raw }}
+    {{ tag.html|raw|insert_tag_raw }}
 {% endblock %}

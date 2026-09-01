@@ -32,7 +32,7 @@ To force a specific color scheme set "color-scheme" to "light" or "dark". #}
 {% block shadow_content %}
 
     {% if fallback_text|default('')|length %}
-        {{ fallback_text|insert_tag_raw|raw }}
+        {{ fallback_text|sanitize_html('contao')|insert_tag_raw }}
     {% else %}
         {{ ('MSC.cookie_consent.optin_fallback.info'|trans)|raw }}
     {% endif %}

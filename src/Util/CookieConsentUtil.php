@@ -58,7 +58,7 @@ class CookieConsentUtil {
         $tagId = intval($tagId);
 
         $request = $this->requestStack->getMainRequest();
-        $pageModel = $request->get('pageModel');
+        $pageModel = $request->attributes->get('pageModel');
 
         if( !($pageModel instanceof PageModel) ) {
             return false;
@@ -116,7 +116,7 @@ class CookieConsentUtil {
     public function getAllowedTags(): array {
 
         $request = $this->requestStack->getMainRequest();
-        $pageModel = $request->get('pageModel');
+        $pageModel = $request->attributes->get('pageModel');
 
         if( !($pageModel instanceof PageModel) ) {
             return [];
