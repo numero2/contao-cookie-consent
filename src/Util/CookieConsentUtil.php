@@ -251,7 +251,7 @@ class CookieConsentUtil {
         $href = $href . '?_ccscb=1';
 
         if( strlen($strElementId) ) {
-            $href .= '&amp;_ccelid='.$strElementId;
+            $href .= '&_ccelid='.$strElementId;
         }
 
         return $href;

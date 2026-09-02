@@ -15,9 +15,9 @@
 
     {% block shadow_disclaimer_text %}
         {% if cc_override_labels and cc_text|length %}
-            {{ cc_text|insert_tag_raw|raw }}
+            {{ cc_text|raw|insert_tag_raw }}
         {% else %}
-            {{ 'MSC.cookie_consent.default.text'|trans|insert_tag_raw|raw }}
+            {{ 'MSC.cookie_consent.default.text'|trans|raw|insert_tag_raw }}
         {% endif %}
     {% endblock %}
 
